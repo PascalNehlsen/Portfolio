@@ -8,6 +8,7 @@ $green: #3dcfb6;
 $background-green: rgba(61, 207, 182, 0.3);
 $white: #ffffff;
 $grey: #d9d9d9;
+$background-dark: #1c1c1c;
 $gradient-green: linear-gradient(
   90deg,
   #1c1c1c 0%,
@@ -24,8 +25,6 @@ $l-spacing: -0.03em;
 
 @mixin transBtn() {
   border: 1px solid $white;
-  width: Fill (172px) px;
-  height: Fixed (48px) px;
   padding: 12px 24px;
   border-radius: 100px;
   background-color: transparent;
