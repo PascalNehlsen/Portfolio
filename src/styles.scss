@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+$green: #3dcfb6;
+$background-green: rgba(61, 207, 182, 0.3);
+$white: #ffffff;
+$grey: #d9d9d9;
+$gradient-green: linear-gradient(
+  90deg,
+  #1c1c1c 0%,
+  rgba(28, 28, 28, 0) 10%,
+  rgba(28, 28, 28, 0) 90%,
+  #1c1c1c 100%
+);
+$err: rgba(236, 123, 123, 0.8);
+$hover-background-green: rgba(61, 207, 182, 0.3);
+$w-padding: 0 100px 0 100px;
+$fira-font: "Fira Code";
+$karla-font: "Karla";
+$l-spacing: -0.03em;
+
+@mixin transBtn() {
+  border: 1px solid $white;
+  width: Fill (172px) px;
+  height: Fixed (48px) px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  background-color: transparent;
+  color: $white;
+  font-size: 18px;
+  font-family: $karla-font;
+  font-weight: 400;
+}
+
+/* fira-code-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/fira-code-v22-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* fira-code-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/fira-code-v22-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* karla-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/karla-v31-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* karla-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/karla-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

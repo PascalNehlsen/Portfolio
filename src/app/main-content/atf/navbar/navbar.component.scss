@@ -1,0 +1,41 @@
+@import "./../../../../styles.scss";
+
+nav {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  font-size: 24px;
+  padding: 50px 100px;
+  > img {
+    cursor: pointer;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  > img {
+    cursor: pointer;
+  }
+  > div {
+    position: relative;
+    > a {
+      color: $white;
+      text-decoration: none;
+      font-family: $fira-font;
+      line-height: 26.24px;
+      letter-spacing: $l-spacing;
+      &:hover {
+        color: $green;
+      }
+    }
+    > img {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+    }
+  }
+}

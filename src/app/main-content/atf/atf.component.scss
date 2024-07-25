@@ -1,0 +1,126 @@
+@import "./../../../styles.scss";
+
+section {
+  background-image: url(./../../../assets/img/background/background.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+}
+
+.owner-presentation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  > div:last-of-type {
+    display: flex;
+    gap: 48px;
+    > button {
+      @include transBtn();
+      &:hover {
+        border: 1px solid $green;
+        cursor: pointer;
+        color: $green;
+      }
+    }
+  }
+}
+
+h1 {
+  color: $grey;
+  font-family: $fira-font;
+  font-weight: bold;
+  font-size: 128px;
+  letter-spacing: $l-spacing;
+}
+
+h2 {
+  color: $grey;
+  font-size: 40px;
+  font-family: $fira-font;
+  font-weight: 300;
+}
+
+.atf-design {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  padding: $w-padding;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  > div {
+    height: 240px;
+    border: 1px solid $green;
+    position: relative;
+  }
+  > div:last-of-type {
+    height: 190px;
+    border: 1px solid $white;
+    position: relative;
+  }
+}
+
+.atf-socials {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 20px;
+  top: -350px;
+  left: -14px;
+  > a {
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    color: $white;
+    transform: rotate(180deg);
+    font-family: $karla-font;
+    font-size: 20px;
+    &:hover {
+      color: $green;
+    }
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    > img {
+      cursor: pointer;
+    }
+  }
+}
+
+.atf-rectangle {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  left: -15px;
+  top: -80px;
+  > img:last-of-type {
+    position: relative;
+    left: -50%;
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 100px;
+  color: $green;
+  font-family: $karla-font;
+  font-size: 32px;
+  position: absolute;
+  bottom: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  rotate: -3deg;
+  white-space: nowrap;
+  overflow: hidden;
+  > p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
