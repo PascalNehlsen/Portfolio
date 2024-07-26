@@ -1,0 +1,23 @@
+@import "./../../../styles.scss";
+section {
+  background-color: $background-dark;
+  display: flex;
+  height: 600px;
+  padding: $w-padding;
+  > div {
+    width: 500px;
+    > span {
+      @include greenHeadline();
+    }
+    > p {
+      font-family: $karla-font;
+      font-size: 18px;
+      color: $white;
+      text-align: justify;
+      margin-bottom: 10px;
+      > span {
+        color: $green;
+      }
+    }
+  }
+}

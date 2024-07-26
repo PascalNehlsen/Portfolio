@@ -23,8 +23,7 @@ section {
 .projects-container {
   height: 350px;
   display: flex;
-  justify-content: start;
-  gap: 250px;
+  justify-content: space-between;
   align-items: center;
   > div:first-of-type {
     display: flex;
@@ -61,4 +60,21 @@ section {
 .green-vertical-border {
   border: 1px solid $green;
   width: 100%;
+}
+
+.projects-small-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  > img:first-of-type {
+    margin-bottom: 200px;
+  }
+  > img:last-of-type {
+    margin-top: 200px;
+  }
+}
+
+.hidden {
+  display: none;
 }

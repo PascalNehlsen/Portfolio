@@ -1,0 +1,16 @@
+@import "./../../../styles.scss";
+section {
+  background-color: $background-dark;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 450px;
+  padding: $w-padding;
+  > span {
+    font-size: 32px;
+    font-family: $fira-font;
+    color: $green;
+    font-weight: bold;
+  }
+}
