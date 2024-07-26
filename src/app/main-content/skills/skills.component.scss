@@ -1,0 +1,68 @@
+@import "./../../../styles.scss";
+section {
+  background-image: url(./../../../assets/img/background/background-skills.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 250px;
+  height: 1000px;
+  padding: $w-padding;
+}
+
+.tech-introduce {
+  @include descripContainer();
+  > p:nth-of-type(2) {
+    font-family: $fira-font;
+    color: $white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    > span {
+      color: $green;
+    }
+  }
+  > p:last-of-type {
+    margin-bottom: 40px;
+    color: $white;
+  }
+  > button {
+    @include transBtn();
+  }
+}
+
+.skillset {
+  display: flex;
+  gap: 50px;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: start;
+  height: 450px;
+  width: 630px;
+  flex-wrap: wrap;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    width: 100px;
+    height: 120px;
+    > img {
+      height: 50px;
+      width: 50px;
+      &:hover {
+        scale: 1.1;
+      }
+    }
+    > span {
+      color: $white;
+      letter-spacing: $l-spacing;
+      font-family: $fira-font;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}

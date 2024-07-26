@@ -20,11 +20,6 @@ section {
     gap: 48px;
     > button {
       @include transBtn();
-      &:hover {
-        border: 1px solid $green;
-        cursor: pointer;
-        color: $green;
-      }
     }
   }
 }
