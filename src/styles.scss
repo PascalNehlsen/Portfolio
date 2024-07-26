@@ -40,6 +40,13 @@ $l-spacing: -0.03em;
   }
 }
 
+@mixin greenHeadline() {
+  font-family: $fira-font;
+  color: $green;
+  font-weight: 700;
+  font-size: 64px;
+}
+
 @mixin descripContainer() {
   background-color: $background-green-transparent;
   font-family: $karla-font;
@@ -50,13 +57,10 @@ $l-spacing: -0.03em;
   border-radius: 30px;
   padding: 20px 32px 32px 32px;
   text-align: justify;
-
   > span {
-    font-family: $fira-font;
-    color: $green;
-    font-weight: 700;
-    font-size: 64px;
+    @include greenHeadline();
   }
+
   > p:first-of-type {
     font-family: $karla-font;
     margin-top: 30px;

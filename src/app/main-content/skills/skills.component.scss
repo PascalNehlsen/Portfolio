@@ -1,12 +1,12 @@
 @import "./../../../styles.scss";
 section {
-  background-image: url(./../../../assets/img/background/background-skills.png);
+  background-color: $background-dark;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 250px;
-  height: 1000px;
+  height: 800px;
   padding: $w-padding;
 }
 

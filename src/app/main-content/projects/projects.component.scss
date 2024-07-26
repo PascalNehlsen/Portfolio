@@ -1,0 +1,64 @@
+@import "./../../../styles.scss";
+section {
+  background-color: $background-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 800px;
+  padding: $w-padding;
+  > span {
+    @include greenHeadline();
+  }
+  > p {
+    font-family: $karla-font;
+    font-size: 18px;
+    color: $white;
+    text-align: justify;
+    width: 450px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+}
+
+.projects-container {
+  height: 350px;
+  display: flex;
+  justify-content: start;
+  gap: 250px;
+  align-items: center;
+  > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    width: 880px;
+  }
+}
+
+.project-description {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 120px;
+  align-items: center;
+  &:hover {
+    background-color: $background-green;
+    cursor: pointer;
+  }
+  > p:first-of-type {
+    font-family: $fira-font;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  > p {
+    font-family: $karla-font;
+    font-size: 18px;
+    color: $white;
+    > span {
+      color: $green;
+    }
+  }
+}
+
+.green-vertical-border {
+  border: 1px solid $green;
+  width: 100%;
+}
