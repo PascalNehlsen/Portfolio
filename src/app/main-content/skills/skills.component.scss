@@ -3,8 +3,8 @@ section {
   background-color: $background-dark;
   background-size: cover;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 250px;
   height: 800px;
   padding: $w-padding;
@@ -37,7 +37,7 @@ section {
   gap: 50px;
   row-gap: 20px;
   align-items: center;
-  justify-content: start;
+  justify-content: end;
   height: 450px;
   width: 630px;
   flex-wrap: wrap;

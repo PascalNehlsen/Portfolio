@@ -3,6 +3,8 @@ section {
   background-color: $background-dark;
   display: flex;
   height: 600px;
+  justify-content: center;
+  gap: 250px;
   padding: $w-padding;
   > div {
     width: 500px;

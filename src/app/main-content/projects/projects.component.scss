@@ -4,19 +4,23 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  align-items: center;
+  gap: 250px;
   height: 800px;
   padding: $w-padding;
-  > span {
-    @include greenHeadline();
-  }
-  > p {
-    font-family: $karla-font;
-    font-size: 18px;
-    color: $white;
-    text-align: justify;
-    width: 450px;
-    margin-top: 30px;
-    margin-bottom: 60px;
+  > div {
+    > span {
+      @include greenHeadline();
+    }
+    > p {
+      font-family: $karla-font;
+      font-size: 18px;
+      color: $white;
+      text-align: justify;
+      width: 450px;
+      margin-top: 30px;
+      margin-bottom: 60px;
+    }
   }
 }
 
