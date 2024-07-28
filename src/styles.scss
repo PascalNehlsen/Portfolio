@@ -89,6 +89,27 @@ h3 {
   margin-bottom: 20px;
 }
 
+.logo {
+  font-family: $fira-font;
+  display: flex;
+  align-items: center;
+  > div:first-of-type {
+    color: $green;
+    font-weight: bold;
+    font-size: 44px;
+    transform: rotate(270deg);
+    width: fit-content;
+    height: fit-content;
+    margin-right: -10px;
+  }
+  > div:last-of-type {
+    color: $white;
+    font-weight: bold;
+    line-height: 26px;
+    font-size: 32px;
+  }
+}
+
 /* fira-code-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -121,13 +142,4 @@ h3 {
   font-style: normal;
   font-weight: 700;
   src: url("./assets/fonts/karla-v31-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

@@ -1,0 +1,9 @@
+@import "./../../../styles.scss";
+section {
+  background-color: $background-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding: $w-padding;
+}

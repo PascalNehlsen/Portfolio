@@ -39,24 +39,3 @@ nav {
     }
   }
 }
-
-.logo {
-  font-family: $fira-font;
-  display: flex;
-  align-items: center;
-  > div:first-of-type {
-    color: $green;
-    font-weight: bold;
-    font-size: 44px;
-    transform: rotate(270deg);
-    width: fit-content;
-    height: fit-content;
-    margin-right: -10px;
-  }
-  > div:last-of-type {
-    color: $white;
-    font-weight: bold;
-    line-height: 26px;
-    font-size: 32px;
-  }
-}

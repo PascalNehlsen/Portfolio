@@ -6,12 +6,14 @@ section {
   padding: $w-padding;
   > div {
     width: 500px;
-    > span {
+    > div {
       @include greenHeadline();
+      line-height: 60px;
+      margin-bottom: 40px;
     }
     > p {
       font-family: $karla-font;
-      font-size: 18px;
+      font-size: 16px;
       color: $white;
       text-align: justify;
       margin-bottom: 10px;
