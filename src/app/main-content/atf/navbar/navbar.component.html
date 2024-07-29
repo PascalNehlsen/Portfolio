@@ -2,17 +2,17 @@
     <div class="nav-links">
         <img src="./assets/img/icons/eng.png" alt="Translation Logo">
         <div>
-            <a (mouseenter)="showImage('circle-about')" (mouseleave)="hideImage()" href="">About me</a>
+            <a (mouseenter)="showImage('circle-about')" (mouseleave)="hideImage()" href="#about-me">About me</a>
             <img [ngClass]="{'hidden': activeImage !== 'circle-about'}" src="./assets/img/icons/hover-circle.png"
                 alt="Owner Logo">
         </div>
         <div>
-            <a (mouseenter)="showImage('circle-skills')" (mouseleave)="hideImage()" href="">Skills</a>
+            <a (mouseenter)="showImage('circle-skills')" (mouseleave)="hideImage()" href="#skills">Skills</a>
             <img [ngClass]="{'hidden': activeImage !== 'circle-skills'}" src="./assets/img/icons/hover-circle.png"
                 alt="Owner Logo">
         </div>
         <div>
-            <a (mouseenter)="showImage('circle-owner')" (mouseleave)="hideImage()" href="">Projects</a>
+            <a (mouseenter)="showImage('circle-owner')" (mouseleave)="hideImage()" href="#projects">Projects</a>
             <img [ngClass]="{'hidden': activeImage !== 'circle-owner'}" src="./assets/img/icons/hover-circle.png"
                 alt="Owner Logo">
         </div>

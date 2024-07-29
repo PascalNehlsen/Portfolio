@@ -101,10 +101,6 @@ h2 {
 }
 
 .slider {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 100px;
   color: $green;
   font-family: $karla-font;
   font-size: 32px;
@@ -112,10 +108,27 @@ h2 {
   bottom: 50px;
   background: rgba(255, 255, 255, 0.12);
   rotate: -3deg;
-  white-space: nowrap;
+  width: 100%;
   overflow: hidden;
-  > p {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  > div {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    animation: move-words 50s linear infinite;
+
+    > p {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+@keyframes move-words {
+  0% {
+    transform: translateX(10%); /* Start off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen on the left */
   }
 }

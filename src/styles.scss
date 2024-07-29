@@ -19,7 +19,7 @@ $gradient-green: linear-gradient(
 );
 $err: rgba(236, 123, 123, 0.8);
 $hover-background-green: rgba(61, 207, 182, 0.3);
-$w-padding: 0 200px 0 200px;
+$w-padding: 50px 200px 50px 200px;
 $fira-font: "Fira Code";
 $karla-font: "Karla";
 $l-spacing: -0.03em;
@@ -93,6 +93,7 @@ h3 {
   font-family: $fira-font;
   display: flex;
   align-items: center;
+  cursor: default;
   > div:first-of-type {
     color: $green;
     font-weight: bold;
@@ -107,6 +108,19 @@ h3 {
     font-weight: bold;
     line-height: 26px;
     font-size: 32px;
+  }
+  &:hover {
+    > div:first-of-type {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $green;
+      color: transparent;
+    }
+
+    > div:last-of-type {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $white;
+      color: transparent;
+    }
   }
 }
 

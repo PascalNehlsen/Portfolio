@@ -3,9 +3,8 @@ section {
   background-color: $background-dark;
   background-size: cover;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  height: 800px;
   padding: $w-padding;
 }
 
@@ -26,8 +25,10 @@ section {
     margin-bottom: 40px;
     color: $white;
   }
-  > button {
-    @include transBtn();
+  > a {
+    > button {
+      @include transBtn();
+    }
   }
 }
 
@@ -62,6 +63,29 @@ section {
       font-family: $fira-font;
       font-size: 18px;
       text-align: center;
+    }
+  }
+
+  > div:last-of-type {
+    position: relative;
+    &:hover {
+      > span {
+        color: $green;
+      }
+      > img:last-of-type {
+        scale: 1.1;
+      }
+    }
+    > img:first-of-type {
+      &:hover {
+        scale: 1;
+      }
+      position: absolute;
+      height: 129px;
+      width: 188px;
+      top: -110px;
+      left: -5px;
+      z-index: 999;
     }
   }
 }

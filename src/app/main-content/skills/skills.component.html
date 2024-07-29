@@ -14,7 +14,7 @@
             <p>Feel free to contact me. I look forward to
                 expanding on my previous knowledge.
             </p>
-            <button>Let's Talk</button>
+            <a href="#contact"><button>Let's Talk</button></a>
         </div>
     </div>
 
@@ -59,7 +59,9 @@
             <img src="./assets/img/icons/scrum.png" alt="">
             <span>Scrum</span>
         </div>
-        <div>
+        <div (mouseenter)="showImage('speech-bubble')" (mouseleave)="hideImage()">
+            <img [ngClass]="{'hidden': activeImage !== 'speech-bubble'}" src="./assets/img/icons/speech-bubble.png"
+                alt="">
             <img src="./assets/img/icons/knowledge.png" alt="">
             <span>Growth Mindset</span>
         </div>
