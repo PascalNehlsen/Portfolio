@@ -2,7 +2,7 @@
 section {
   background-color: $background-dark;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   gap: 250px;
   padding: $w-padding;
   > div {
@@ -23,4 +23,54 @@ section {
       }
     }
   }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 620px;
+  > div {
+    > div {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      > input {
+        border: none;
+        background-color: transparent;
+        font-family: $karla-font;
+        font-size: 18px;
+        color: $white-transparent;
+        cursor: pointer;
+      }
+      > textarea {
+        border: none;
+        background-color: transparent;
+        font-family: $karla-font;
+        font-size: 18px;
+        color: $white-transparent;
+        cursor: pointer;
+      }
+      > label {
+        color: $green;
+        font-family: $fira-font;
+        font-weight: 500;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.submit-btn {
+  @include transBtn();
+  border: 1px solid $white-transparent;
+  color: $white-transparent;
+  width: fit-content;
 }
