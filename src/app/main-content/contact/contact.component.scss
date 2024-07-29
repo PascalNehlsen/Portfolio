@@ -25,16 +25,20 @@ section {
   }
 }
 
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 50px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   width: 620px;
   > div {
     > div {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
       > input {
         border: none;
         background-color: transparent;
@@ -50,6 +54,7 @@ section {
         font-size: 18px;
         color: $white-transparent;
         cursor: pointer;
+        resize: none;
       }
       > label {
         color: $green;
@@ -61,11 +66,12 @@ section {
   }
 }
 
-.submit-container {
+.write-form {
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
+  gap: 28px;
+  height: 150px;
 }
 
 .submit-btn {
@@ -73,4 +79,23 @@ section {
   border: 1px solid $white-transparent;
   color: $white-transparent;
   width: fit-content;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  width: 620px;
+  gap: 10px;
+  font-size: 15px;
+  font-family: $karla-font;
+  color: $white;
+  > div {
+    > a {
+      text-decoration: none;
+      color: $green;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }
