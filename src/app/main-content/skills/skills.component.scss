@@ -4,8 +4,7 @@ section {
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 250px;
+  justify-content: space-between;
   height: 800px;
   padding: $w-padding;
 }

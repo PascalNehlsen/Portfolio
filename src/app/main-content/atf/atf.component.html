@@ -23,16 +23,20 @@
             <div class="atf-socials">
                 <a href="mailto:mail@pascal-nehlsen.de">mail&#64;pascal-nehlsen.de</a>
                 <div>
-                    <a href="https://github.com/PascalNehlsen/" target="_blank">
+                    <a (mouseenter)="showImage('circle-github')" (mouseleave)="hideImage()"
+                        href="https://github.com/PascalNehlsen/" target="_blank">
                         <img src="./assets/img/icons/github-green.png" alt="Github Logo">
                     </a>
-                    <img src="./assets/img/icons/hover-circle.png" alt="Hover Circle">
+                    <img [ngClass]="{'hidden': activeImage !== 'circle-github'}"
+                        src="./assets/img/icons/hover-circle.png" alt="Hover Circle">
                 </div>
                 <div>
-                    <a href="https://www.linkedin.com/in/pascal-nehlsen/" target="_blank">
+                    <a (mouseenter)="showImage('circle-linkedin')" (mouseleave)="hideImage()"
+                        href="https://www.linkedin.com/in/pascal-nehlsen/" target="_blank">
                         <img src="./assets/img/icons/linkedin-green.png" alt="LinkedIn Logo">
                     </a>
-                    <img src="./assets/img/icons/hover-circle.png" alt="Hover Circle">
+                    <img [ngClass]="{'hidden': activeImage !== 'circle-linkedin'}"
+                        src="./assets/img/icons/hover-circle.png" alt="Hover Circle">
                 </div>
             </div>
         </div>

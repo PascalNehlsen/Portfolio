@@ -39,9 +39,13 @@ section {
   height: 200px;
   justify-content: center;
   > div {
-    display: flex;
-    align-items: center;
+    position: relative;
     gap: 5px;
+    > img {
+      position: absolute;
+      left: -12px;
+      top: 25%;
+    }
     > a {
       font-family: $karla-font;
       color: $white;

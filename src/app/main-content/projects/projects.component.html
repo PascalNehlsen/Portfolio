@@ -8,7 +8,7 @@
         <div class="projects-container">
             <div>
                 <div class="green-vertical-border"></div>
-                <div class="project-description">
+                <div class="project-description" (mouseenter)="showImage('join')" (mouseleave)="hideImage()">
                     <p>Join</p>
                     <p>
                         JavaScript <span>|</span>
@@ -18,7 +18,7 @@
                     </p>
                 </div>
                 <div class="green-vertical-border"></div>
-                <div class="project-description">
+                <div class="project-description" (mouseenter)="showImage('elpolloloco')" (mouseleave)="hideImage()">
                     <p>El Pollo Loco</p>
                     <p>
                         JavaScript <span>|</span>
@@ -27,7 +27,7 @@
                     </p>
                 </div>
                 <div class="green-vertical-border"></div>
-                <div class="project-description">
+                <div class="project-description" (mouseenter)="showImage('pokedex')" (mouseleave)="hideImage()">
                     <p>Pokedex</p>
                     <p>
                         JavaScript <span>|</span>
@@ -38,11 +38,12 @@
                 <div class="green-vertical-border"></div>
             </div>
         </div>
+    </div>
 
-        <div class="projects-small-container">
-            <img [ngClass]="{'hidden': isHidden}" src="./assets/img/projects/join-small.png" alt="">
-            <img [ngClass]="{'hidden': isHidden}" src="./assets/img/projects/elpolloloco-small.png" alt="">
-            <img [ngClass]="{'hidden': isHidden}" src="./assets/img/projects/elpolloloco-small.png" alt="">
-        </div>
+    <div class="projects-small-container">
+        <img [ngClass]="{'hidden': activeImage !== 'join'}" src="./assets/img/projects/join-small.png" alt="">
+        <img [ngClass]="{'hidden': activeImage !== 'elpolloloco'}" src="./assets/img/projects/elpolloloco-small.png"
+            alt="">
+        <img [ngClass]="{'hidden': activeImage !== 'pokedex'}" src="./assets/img/projects/elpolloloco-small.png" alt="">
     </div>
 </section>

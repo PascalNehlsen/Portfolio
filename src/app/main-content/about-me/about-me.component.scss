@@ -2,8 +2,7 @@
 section {
   background: $background-dark;
   display: flex;
-  justify-content: center;
-  gap: 250px;
+  justify-content: space-between;
   align-items: center;
   height: 800px;
   padding: $w-padding;
@@ -15,6 +14,17 @@ section {
 
 .owner-introdution {
   @include descripContainer();
+  > div {
+    > img {
+      height: 26px;
+      width: 26px;
+    }
+    > p {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }
 
 .owner-picture {

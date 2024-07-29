@@ -2,9 +2,7 @@
 section {
   background-color: $background-dark;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  justify-content: space-between;
   gap: 250px;
   height: 800px;
   padding: $w-padding;
@@ -74,11 +72,10 @@ section {
   > img:first-of-type {
     margin-bottom: 200px;
   }
-  > img:last-of-type {
-    margin-top: 200px;
+  > img:nth-of-type(2) {
+    margin-top: 100px;
   }
-}
-
-.hidden {
-  display: none;
+  > img:last-of-type {
+    margin-top: 400px;
+  }
 }
