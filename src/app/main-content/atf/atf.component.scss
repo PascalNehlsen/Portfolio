@@ -30,6 +30,9 @@ h1 {
   font-weight: bold;
   font-size: 128px;
   letter-spacing: $l-spacing;
+  &:hover {
+    cursor: default;
+  }
 }
 
 h2 {
@@ -37,6 +40,9 @@ h2 {
   font-size: 40px;
   font-family: $fira-font;
   font-weight: 300;
+  &:hover {
+    cursor: default;
+  }
 }
 
 .atf-design {

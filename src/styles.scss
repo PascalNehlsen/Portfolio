@@ -41,12 +41,27 @@ $l-spacing: -0.03em;
   }
 }
 
+p {
+  &:hover {
+    cursor: default;
+  }
+}
+
+span {
+  &:hover {
+    cursor: default;
+  }
+}
+
 @mixin greenHeadline() {
   font-family: $fira-font;
   color: $green;
   font-weight: 700;
   font-size: 64px;
   letter-spacing: $l-spacing;
+  &:hover {
+    cursor: default;
+  }
 }
 
 @mixin descripContainer() {
@@ -93,10 +108,18 @@ h3 {
   font-family: $karla-font;
   font-size: 24px;
   margin-bottom: 20px;
+  &:hover {
+    cursor: default;
+  }
 }
 
 .green-vertical-border {
   border: 1px solid $green;
+  width: 100%;
+}
+
+.green-vertical-border-transparent {
+  border: 1px solid rgba(61, 207, 182, 0.5);
   width: 100%;
 }
 

@@ -44,7 +44,7 @@ section {
         background-color: transparent;
         font-family: $karla-font;
         font-size: 18px;
-        color: $white-transparent;
+        color: $white;
         cursor: pointer;
       }
       > textarea {
@@ -52,7 +52,7 @@ section {
         background-color: transparent;
         font-family: $karla-font;
         font-size: 18px;
-        color: $white-transparent;
+        color: $white;
         cursor: pointer;
         resize: none;
       }
@@ -74,21 +74,52 @@ section {
   height: 150px;
 }
 
+.write-form:hover input::placeholder,
+.write-form:hover textarea::placeholder {
+  color: $white;
+}
+
 .submit-btn {
   @include transBtn();
   border: 1px solid $white-transparent;
   color: $white-transparent;
   width: fit-content;
+  &:hover {
+    border: 1px solid $white-transparent;
+    color: $white-transparent;
+  }
+}
+
+.enabled-btn {
+  border: 1px solid $white;
+  color: $white;
+  &:hover {
+    border: 1px solid $green;
+    cursor: pointer;
+    color: $green;
+  }
+}
+
+.disabled-btn {
+  border: 1px solid $white-transparent;
+  color: $white-transparent;
+  &:hover {
+    cursor: default;
+  }
 }
 
 .checkbox-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 620px;
   gap: 10px;
   font-size: 15px;
   font-family: $karla-font;
   color: $white;
+  > img {
+    cursor: pointer;
+  }
   > div {
     > a {
       text-decoration: none;
