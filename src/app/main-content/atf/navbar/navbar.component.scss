@@ -14,7 +14,7 @@ nav {
 .nav-links {
   display: flex;
   gap: 40px;
-  > img {
+  > svg {
     cursor: pointer;
   }
   > div {
@@ -25,6 +25,9 @@ nav {
       font-family: $fira-font;
       line-height: 26.24px;
       letter-spacing: $l-spacing;
+      &:hover {
+        color: $green;
+      }
     }
     > img {
       position: absolute;
@@ -32,4 +35,12 @@ nav {
       top: 100%;
     }
   }
+}
+
+#translateSvg .cls-2:hover ~ .cls-3 {
+  fill-opacity: 1;
+}
+
+#translateSvg .cls-2:hover {
+  stroke: $white;
 }

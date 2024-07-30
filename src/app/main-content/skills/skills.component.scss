@@ -1,6 +1,10 @@
 @import "./../../../styles.scss";
 section {
-  background-color: $background-dark;
+  background: radial-gradient(
+    22.43% 43.85% at 1.22% 52.45%,
+    rgba(8, 70, 59, 1) 0%,
+    #1c1c1c 100%
+  );
   background-size: cover;
   display: flex;
   align-items: start;

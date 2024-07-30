@@ -100,6 +100,10 @@ h3 {
   width: 100%;
 }
 
+#svg .cls-2:hover {
+  fill: $white;
+}
+
 .logo {
   font-family: $fira-font;
   display: flex;
@@ -112,7 +116,7 @@ h3 {
     transform: rotate(270deg);
     width: fit-content;
     height: fit-content;
-    margin-right: -10px;
+    margin-right: -13px;
   }
   > div:last-of-type {
     color: $white;
