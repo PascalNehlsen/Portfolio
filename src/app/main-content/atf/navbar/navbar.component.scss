@@ -37,10 +37,14 @@ nav {
   }
 }
 
-#translateSvg .cls-2:hover ~ .cls-3 {
+#translateSvg:hover .cls-2 {
+  stroke: $white;
+}
+
+#translateSvg:hover .cls-3 {
   fill-opacity: 1;
 }
 
-#translateSvg .cls-2:hover {
-  stroke: $white;
+#translateSvg:hover .cls-1 {
+  fill: $white;
 }

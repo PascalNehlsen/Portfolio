@@ -121,11 +121,15 @@ h2 {
   }
 }
 
+#svg:hover .cls-2 {
+  fill: $white;
+}
+
 @keyframes move-words {
   0% {
-    transform: translateX(10%); /* Start off-screen on the right */
+    transform: translateX(10%);
   }
   100% {
-    transform: translateX(-100%); /* End off-screen on the left */
+    transform: translateX(-100%);
   }
 }

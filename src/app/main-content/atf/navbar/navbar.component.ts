@@ -10,6 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  engVisible = true;
+  gerVisible = false;
+
   constructor(public PortfolioService: PortfolioService) {}
 
   showImage(imageName: string) {
@@ -22,5 +25,10 @@ export class NavbarComponent {
 
   get activeImage(): string {
     return this.PortfolioService.getActiveImage();
+  }
+
+  translateToggle() {
+    this.engVisible = !this.engVisible;
+    this.gerVisible = !this.gerVisible;
   }
 }
