@@ -72,15 +72,20 @@ h2 {
   gap: 20px;
   top: -350px;
   left: -14px;
-  > a {
-    writing-mode: vertical-rl;
-    text-decoration: none;
-    color: $white;
-    transform: rotate(180deg);
-    font-family: $karla-font;
-    font-size: 20px;
-    &:hover {
-      color: $green;
+  > div:first-of-type {
+    > a:first-of-type {
+      writing-mode: vertical-rl;
+      text-decoration: none;
+      color: $white;
+      transform: rotate(180deg);
+      font-family: $karla-font;
+      font-size: 20px;
+      &:hover {
+        color: $green;
+      }
+    }
+    > a:last-of-type {
+      display: none;
     }
   }
   > div {
@@ -127,15 +132,114 @@ h2 {
   }
 }
 
-#svg:hover .cls-2 {
-  fill: $white;
-}
-
 @keyframes move-words {
   0% {
     transform: translateX(10%);
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 1470px) {
+}
+
+@media (max-width: 1350px) {
+  h1 {
+    font-size: 100px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .atf-design {
+    padding: 0 50px 0 50px;
+  }
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .atf-socials {
+    top: -150px;
+    > div:first-of-type {
+      > a:first-of-type {
+        display: none;
+      }
+      > a:last-of-type {
+        display: flex;
+      }
+    }
+    > div {
+      gap: 3px;
+    }
+  }
+
+  .atf-design {
+    > div {
+      height: 300px;
+    }
+    > div:last-of-type {
+      height: 150px;
+    }
+  }
+
+  .owner-presentation {
+    > div:last-of-type {
+      margin-bottom: 150px;
+    }
+  }
+
+  .atf-design {
+    padding: 0 30px 0 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .owner-presentation {
+    > div:last-of-type {
+      gap: 20px;
+      > button {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 18px;
   }
 }

@@ -162,6 +162,10 @@ h3 {
   display: none;
 }
 
+#svg:hover .cls-2 {
+  fill: $white;
+}
+
 @font-face {
   font-display: swap;
   font-family: "Fira Code";
