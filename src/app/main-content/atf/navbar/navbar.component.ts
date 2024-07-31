@@ -31,4 +31,18 @@ export class NavbarComponent {
     this.engVisible = !this.engVisible;
     this.gerVisible = !this.gerVisible;
   }
+
+  showBurgerMenu() {
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu) {
+      navMenu.classList.toggle('active');
+    }
+  }
+
+  closeMenu(): void {
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
+  }
 }

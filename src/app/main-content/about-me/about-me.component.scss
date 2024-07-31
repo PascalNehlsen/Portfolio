@@ -30,14 +30,155 @@ section {
   position: relative;
   height: 650px;
   width: 600px;
+  display: flex;
+  justify-content: center;
   > img:first-of-type {
+    top: 30px;
     position: absolute;
-    top: 60px;
   }
-
   > img:last-of-type {
     position: absolute;
-    left: 30px;
     top: 30px;
+    height: 568px;
+    width: 568px;
+    object-fit: cover;
+    border-radius: 30px;
+  }
+  &:hover {
+    > img:first-of-type {
+      position: absolute;
+      right: 40px;
+      top: 60px;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  section {
+    padding: 50px 50px;
+  }
+}
+
+@media (max-width: 1300px) {
+  section {
+    padding: 50px 15px;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .owner-picture {
+    margin-top: 100px;
+    height: 460px;
+    width: 420px;
+    > img:first-of-type {
+      top: 35px;
+      height: 390px;
+      width: 400px;
+    }
+    > img:last-of-type {
+      height: 410px;
+      width: 400px;
+    }
+    &:hover {
+      > img:first-of-type {
+        right: 30px;
+        top: 70px;
+      }
+    }
+  }
+
+  .owner-container {
+    margin-top: 30px;
+  }
+
+  .owner-introdution {
+    width: 400px;
+    > div {
+      > img {
+        height: 26px;
+        width: 26px;
+      }
+      > p {
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  section {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 920px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .owner-container {
+    margin-top: 0;
+  }
+
+  .owner-picture {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    gap: 20px;
+  }
+
+  .owner-picture {
+    height: 360px;
+    width: 360px;
+    > img:first-of-type {
+      display: none;
+    }
+    > img:last-of-type {
+      top: 0;
+      height: 358px;
+      width: 358px;
+    }
+  }
+
+  .owner-introdution {
+    width: 360px;
+    font-size: 16px;
+    > span {
+      font-size: 56px;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  section {
+    gap: 20px;
+  }
+
+  .owner-picture {
+    height: 280px;
+    width: 280px;
+    > img:last-of-type {
+      height: 280px;
+      width: 280px;
+    }
+  }
+
+  .owner-introdution {
+    width: 280px;
+    font-size: 16px;
+    padding: 20px 20px;
+    > span {
+      font-size: 48px;
+    }
+    > div {
+      gap: 10px;
+    }
   }
 }
