@@ -16,4 +16,20 @@ export class DialogComponent {
     image: string;
     imageDialog?: string;
   };
+
+  closeDialog() {
+    const projectDialog = document.getElementById(
+      'projectDialog'
+    ) as HTMLDialogElement;
+    projectDialog.style.display = 'none';
+  }
+
+  nextProject() {
+    const projectNumber = document.getElementById('projectNumber')
+      ?.innerHTML as string;
+    let number = parseInt(projectNumber, 10) + 1;
+    if (number > 3) {
+      number = 1;
+    }
+  }
 }
