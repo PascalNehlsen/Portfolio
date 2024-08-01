@@ -8,8 +8,14 @@
         <div class="projects-container">
             <div>
                 <div class="green-vertical-border"></div>
-                <div class="project-description" (mouseenter)="showImage('join')" (mouseleave)="hideImage()">
-                    <p>Join</p>
+                @for (project of projects; track $index) {
+                <div class="project-description" (click)="openDialog($index)" (mouseenter)="showImage(project.name)"
+                    (mouseleave)="hideImage()">
+                    @if (project.name === 'elpolloloco') {
+                    <p>el Pollo Loco</p>
+                    } @else {
+                    <p>{{project.name}}</p>
+                    }
                     <p>
                         JavaScript <span>|</span>
                         HTML <span>|</span>
@@ -18,24 +24,7 @@
                     </p>
                 </div>
                 <div class="green-vertical-border"></div>
-                <div class="project-description" (mouseenter)="showImage('elpolloloco')" (mouseleave)="hideImage()">
-                    <p>El Pollo Loco</p>
-                    <p>
-                        JavaScript <span>|</span>
-                        HTML <span>|</span>
-                        CSS
-                    </p>
-                </div>
-                <div class="green-vertical-border"></div>
-                <div class="project-description" (mouseenter)="showImage('pokedex')" (mouseleave)="hideImage()">
-                    <p>Pokedex</p>
-                    <p>
-                        JavaScript <span>|</span>
-                        HTML <span>|</span>
-                        CSS
-                    </p>
-                </div>
-                <div class="green-vertical-border"></div>
+                }
             </div>
         </div>
     </div>
@@ -46,4 +35,8 @@
             alt="">
         <img [ngClass]="{'hidden': activeImage !== 'pokedex'}" src="./assets/img/projects/pokedex-small.png" alt="">
     </div>
+
+    @for(project of projects; track $index) {
+    <app-dialog [singleproject]="project"></app-dialog>
+    }
 </section>
