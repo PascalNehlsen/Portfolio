@@ -55,6 +55,8 @@ section {
         color: $white;
         cursor: pointer;
         resize: none;
+        white-space: pre-wrap;
+        min-height: 45px;
       }
       > label {
         color: $green;
@@ -126,6 +128,81 @@ section {
       color: $green;
       &:hover {
         color: $white;
+      }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  section {
+    padding: 50px 50px;
+  }
+}
+
+@media (max-width: 1350px) {
+  section {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1300px) {
+  section {
+    padding: 50px 15px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .form {
+    width: 100%;
+  }
+
+  .checkbox-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    gap: 50px;
+    > div {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .write-form {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  section {
+    > div {
+      > p {
+        font-size: 16px;
+      }
+      > h3:last-of-type {
+        font-size: 20px;
+      }
+      > div {
+        font-size: 56px;
+      }
+    }
+  }
+
+  .form {
+    > div {
+      > div {
+        > input {
+          font-size: 16px;
+        }
+        > textarea {
+          font-size: 16px;
+        }
+        > label {
+          font-size: 20px;
+        }
       }
     }
   }

@@ -4,8 +4,9 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
   padding: $w-padding;
+  padding-bottom: 0;
+  position: relative;
 }
 
 .owner-footer {
@@ -53,6 +54,46 @@ section {
       &:hover {
         color: $green;
       }
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  section {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 1300px) {
+  section {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .socials {
+    justify-content: start;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    height: fit-content;
+  }
+
+  .owner-footer {
+    height: 200px;
+    gap: 10px;
+    > div:last-of-type {
+      padding-right: 50px;
     }
   }
 }
