@@ -2,10 +2,12 @@
 section {
   background-color: $background-dark;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: $w-padding;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 50px;
   > span {
     font-size: 32px;
     font-family: $fira-font;
