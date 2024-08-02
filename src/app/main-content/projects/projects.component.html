@@ -8,9 +8,9 @@
         <div class="projects-container">
             <div>
                 <div class="green-vertical-border"></div>
-                @for (project of projects; track $index) {
-                <div class="project-description" (click)="openDialog($index)" (mouseenter)="showImage(project.name)"
-                    (mouseleave)="hideImage()">
+                @for (project of this.PortfolioService.projects; track $index) {
+                <div class="project-description" (click)="this.PortfolioService.openDialog($index)"
+                    (mouseenter)="showImage(project.name)" (mouseleave)="hideImage()">
                     @if (project.name === 'elpolloloco') {
                     <p>el Pollo Loco</p>
                     } @else {
@@ -35,7 +35,7 @@
         <img [ngClass]="{'hidden': activeImage !== 'pokedex'}" src="./assets/img/projects/pokedex-small.png" alt="">
     </div>
 
-    @for(project of projects; track $index) {
+    @for(project of this.PortfolioService.projects; track $index) {
     <app-dialog [singleproject]="project"></app-dialog>
     }
 </section>

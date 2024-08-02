@@ -19,6 +19,7 @@ export class ContactComponent {
   checkboxSrc: string = './assets/img/icons/checkbox.png';
   isChecked: boolean = false;
   isFormEnabled: boolean = false;
+  isFormValid: boolean = false;
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {

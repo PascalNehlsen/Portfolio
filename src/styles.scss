@@ -52,6 +52,18 @@ $l-spacing: -0.03em;
   }
 }
 
+p {
+  &:hover {
+    cursor: default;
+  }
+}
+
+span {
+  &:hover {
+    cursor: default;
+  }
+}
+
 @keyframes textMove {
   0% {
     transform: translateX(0);
@@ -64,18 +76,6 @@ $l-spacing: -0.03em;
   }
   100% {
     transform: translateX(0);
-  }
-}
-
-p {
-  &:hover {
-    cursor: default;
-  }
-}
-
-span {
-  &:hover {
-    cursor: default;
   }
 }
 
