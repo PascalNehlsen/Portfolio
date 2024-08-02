@@ -77,52 +77,65 @@ export class PortfolioService {
 
   openDialog(i: number) {
     const project = this.projects[i];
-    const projectDialog = document.getElementById(
-      'projectDialog'
-    ) as HTMLDialogElement;
-    const githubLink = document.getElementById(
-      'githubLink'
-    ) as HTMLAnchorElement;
-    const demoLink = document.getElementById('demoLink') as HTMLAnchorElement;
-    const projectNumber = document.getElementById(
-      'projectNumber'
-    ) as HTMLSpanElement;
-    const projectTitle = document.getElementById(
-      'projectTitle'
-    ) as HTMLSpanElement;
-    const projectDescription = document.getElementById(
-      'projectDescription'
-    ) as HTMLParagraphElement;
-    const projectImg = document.getElementById(
-      'projectImg'
-    ) as HTMLImageElement;
-    const skillsContainer = document.getElementById(
-      'projectSkills'
-    ) as HTMLDivElement;
 
+    const elements = this.getElements();
+    this.updateDialogContent(elements, project, i);
+    this.populateSkills(
+      elements.skillsContainer,
+      project.tools,
+      project.symbols
+    );
+
+    elements.projectDialog.style.display = 'flex';
+  }
+
+  getElements() {
+    return {
+      projectDialog: document.getElementById(
+        'projectDialog'
+      ) as HTMLDialogElement,
+      githubLink: document.getElementById('githubLink') as HTMLAnchorElement,
+      demoLink: document.getElementById('demoLink') as HTMLAnchorElement,
+      projectNumber: document.getElementById(
+        'projectNumber'
+      ) as HTMLSpanElement,
+      projectTitle: document.getElementById('projectTitle') as HTMLSpanElement,
+      projectDescription: document.getElementById(
+        'projectDescription'
+      ) as HTMLParagraphElement,
+      projectImg: document.getElementById('projectImg') as HTMLImageElement,
+      skillsContainer: document.getElementById(
+        'projectSkills'
+      ) as HTMLDivElement,
+    };
+  }
+
+  updateDialogContent(
+    elements: ReturnType<typeof this.getElements>,
+    project: any,
+    i: number
+  ) {
+    elements.projectImg.src = project.image;
+    elements.projectNumber.innerHTML = (i + 1).toString().padStart(2, '0');
+    elements.projectTitle.innerHTML =
+      project.name === 'elpolloloco' ? 'el Pollo Loco' : project.name;
+    elements.projectDescription.innerHTML = project.description;
+    elements.githubLink.href = project.target;
+  }
+
+  populateSkills(
+    skillsContainer: HTMLDivElement,
+    tools: string[],
+    symbols: string[]
+  ) {
     skillsContainer.innerHTML = '';
-    const toolsAndSymbols = project.tools.map((tool, index) => ({
-      tool,
-      symbol: project.symbols[index] || '',
-    }));
-
-    toolsAndSymbols.forEach(({ tool, symbol }) => {
+    tools.forEach((tool, index) => {
       const skillDiv = document.createElement('div');
-      if (symbol) {
-        skillDiv.innerHTML = `<img src="${symbol}" alt=""> ${tool}`;
-      } else {
-        skillDiv.innerHTML = `${tool}`;
-      }
+      const symbol = symbols[index] || '';
+      skillDiv.innerHTML = symbol
+        ? `<img src="${symbol}" alt=""> ${tool}`
+        : tool;
       skillsContainer.appendChild(skillDiv);
     });
-
-    let number = i + 1;
-    projectImg.src = project.image;
-    projectNumber.innerHTML = number.toString().padStart(2, '0');
-    projectTitle.innerHTML =
-      project.name === 'elpolloloco' ? 'el Pollo Loco' : project.name;
-    projectDescription.innerHTML = project.description;
-    githubLink.href = project.target;
-    projectDialog.style.display = 'flex';
   }
 }

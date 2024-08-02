@@ -12,7 +12,7 @@
         <p>Need a Frontend Developer? <span>Let's talk!</span></p>
     </div>
     <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <div class="green-vertical-border-transparent"></div>
+        <div class="green-vertical-border"></div>
         <div>
             <div class="write-form">
                 <label for="name">What's your name?</label>
@@ -23,7 +23,7 @@
                 }
             </div>
         </div>
-        <div class="green-vertical-border-transparent"></div>
+        <div class="green-vertical-border"></div>
         <div>
             <div class="write-form">
                 <label for="email">What's your email?</label>
@@ -35,7 +35,7 @@
                 }
             </div>
         </div>
-        <div class="green-vertical-border-transparent"></div>
+        <div class="green-vertical-border"></div>
         <div>
             <div class="write-form">
                 <label for="message">How can I help you?</label>
@@ -47,7 +47,7 @@
                 }
             </div>
         </div>
-        <div class="green-vertical-border-transparent"></div>
+        <div class="green-vertical-border"></div>
 
         <div class="submit-container">
             <div class="checkbox-container">
@@ -57,7 +57,11 @@
                     I've read the <a href="">privacy policy</a> and agree
                     to the
                     processing of my data as outlined.
+                    @if (!this.isChecked && !message.invalid && !email.invalid && !name.invalid) {
+                    <span>Please accept the privacy policy.</span>
+                    }
                 </div>
+
             </div>
             <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
                 type="submit" value="Say Hello :)">

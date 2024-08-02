@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Splide from '@splidejs/splide';
+import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'app-carousel',
@@ -9,5 +9,7 @@ import Splide from '@splidejs/splide';
   styleUrl: './carousel.component.scss',
 })
 export class CarouselComponent {
-  constructor() {}
+  constructor() {
+    setTheme('bs5');
+  }
 }

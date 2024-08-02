@@ -84,6 +84,12 @@ nav {
   }
 }
 
+@media (min-width: 769px) {
+  #navMenu {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: row-reverse;

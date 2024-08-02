@@ -23,7 +23,9 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+      this.contactData.name = '';
+      this.contactData.email = '';
+      this.contactData.message = '';
     }
   }
 

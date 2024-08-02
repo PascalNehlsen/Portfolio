@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { PortfolioService } from './../../../portfolio.service';
 import { CommonModule } from '@angular/common';
 
@@ -44,5 +44,14 @@ export class NavbarComponent {
     if (navMenu && navMenu.classList.contains('active')) {
       navMenu.classList.remove('active');
     }
+  }
+
+  stopPropagation(event: MouseEvent) {
+    event.stopPropagation();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.closeMenu();
   }
 }
