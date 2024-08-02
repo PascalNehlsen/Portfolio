@@ -103,6 +103,7 @@ h2 {
   left: -15px;
   top: -80px;
   > img:last-of-type {
+    animation: moveUpAndDown 1s ease-in-out infinite;
     position: relative;
     left: -50%;
   }
@@ -125,11 +126,22 @@ h2 {
     align-items: center;
     gap: 100px;
     animation: move-words 50s linear infinite;
-
     > p {
       padding-top: 10px;
       padding-bottom: 10px;
     }
+  }
+}
+
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
   }
 }
 

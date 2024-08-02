@@ -34,10 +34,36 @@ $l-spacing: -0.03em;
   font-size: 18px;
   font-family: $karla-font;
   font-weight: 400;
+  overflow: hidden;
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+  }
+
   &:hover {
     border: 1px solid $green;
     cursor: pointer;
     color: $green;
+
+    span {
+      animation: textMove 1.5s linear infinite;
+    }
+  }
+}
+
+@keyframes textMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-150%);
+  }
+  50.01% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

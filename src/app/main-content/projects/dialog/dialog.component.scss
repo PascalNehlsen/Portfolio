@@ -19,7 +19,7 @@
   justify-content: center;
   gap: 100px;
   align-items: center;
-  width: 90%;
+  width: 70%;
   height: 70%;
   background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
   border: 1px solid rgba(61, 207, 182, 1);
@@ -29,9 +29,14 @@
     position: absolute;
     right: 80px;
     top: 80px;
+    transition: scale 125ms ease;
+
     &:hover {
       scale: 1.5;
       cursor: pointer;
+      .cls-3 {
+        fill: $green;
+      }
     }
   }
 }
@@ -77,11 +82,22 @@
   margin-top: 30px;
   display: flex;
   gap: 30px;
-  > button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    @include transBtn();
+  > a {
+    > button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include transBtn();
+      &:hover {
+        > img {
+          transform: translate(3px, -3px);
+        }
+      }
+      > img {
+        transition: transform 125ms ease;
+        transform: translate(0px, 0px);
+      }
+    }
   }
 }
 
@@ -95,10 +111,113 @@
   right: 80px;
   bottom: 50px;
   cursor: pointer;
+  &:hover {
+    color: $white;
+    > img {
+      transform: translateX(3px);
+    }
+  }
+  > img {
+    transition: transform 125ms ease;
+    transform: translateX(0px);
+  }
 }
 
 .projectImg {
   height: 70%;
   width: 40%;
   object-fit: contain;
+}
+
+@media (max-width: 1300px) {
+  .inner-dialog {
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .skillset {
+    flex-wrap: wrap;
+  }
+
+  .project-description {
+    width: 40%;
+    > span:first-of-type {
+      font-size: 80px;
+    }
+    > span:nth-of-type(2) {
+      font-size: 40px;
+    }
+    > span:nth-of-type(3) {
+      font-size: 24px;
+    }
+    > p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .inner-dialog {
+    flex-direction: column-reverse;
+    height: fit-content;
+    justify-content: center;
+    gap: 0;
+    padding: 40px 20px;
+    > svg {
+      top: 30px;
+      right: 30px;
+    }
+  }
+
+  .projectImg {
+    margin-top: 30px;
+    height: 230px;
+    width: 320px;
+  }
+
+  .dialog-buttons {
+    margin-bottom: 50px;
+  }
+
+  .skillset {
+    flex-wrap: wrap;
+  }
+
+  .next-project {
+    right: 30px;
+    bottom: 30px;
+  }
+
+  .project-description {
+    width: 100%;
+    > span:first-of-type {
+      font-size: 72px;
+    }
+    > span:nth-of-type(2) {
+      font-size: 56px;
+    }
+    > span:nth-of-type(3) {
+      font-size: 20px;
+    }
+    > p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dialog-buttons {
+    flex-direction: column;
+    gap: 15px;
+    > button {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .projectImg {
+    height: 180px;
+    width: 280px;
+  }
 }
