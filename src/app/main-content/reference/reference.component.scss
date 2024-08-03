@@ -1,4 +1,5 @@
 @import "./../../../styles.scss";
+
 section {
   background-color: $background-dark;
   display: flex;
@@ -14,4 +15,14 @@ section {
     color: $green;
     font-weight: bold;
   }
+}
+
+/* Eigene Styles für den Slider */
+.splide__slide {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  margin: 5px;
 }
