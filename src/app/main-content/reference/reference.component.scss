@@ -26,6 +26,7 @@
   margin-left: 5px;
   margin-right: 5px;
   height: 280px;
+  transition: height 125ms ease; /* Smooth Transition */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,8 +50,10 @@
 
 .splide__arrow {
   background: none;
+  display: flex;
   cursor: default;
-  // position: relative;
+  z-index: 999;
+
   > svg {
     height: 60px;
     width: 60px;
@@ -59,11 +62,13 @@
 }
 
 .splide__arrow--next {
-  top: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .splide__arrow--prev {
-  top: 200px;
+  margin-right: auto;
+  z-index: 999;
 }
 
 #svg:hover .cls-2 {
@@ -73,4 +78,18 @@
 .splide.is-initialized,
 .splide.is-rendered {
   padding-top: 50px;
+}
+
+.splide__slide.is-active {
+  height: 350px;
+}
+
+.splide__slide:not(.is-active) {
+  transform: translateY(25px);
+}
+
+.splide__pagination {
+  justify-content: center;
+  bottom: -30px;
+  z-index: 998;
 }

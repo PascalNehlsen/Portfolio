@@ -12,7 +12,12 @@ export class ReferenceComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     var splide = new Splide('.splide', {
       type: 'loop',
-      padding: '5rem',
+      gap: '6rem',
+      focus: 'center',
+      padding: {
+        left: '20%', // Padding an den Seiten, um mehr von den äußeren Slides sichtbar zu machen
+        right: '20%',
+      },
     });
 
     splide.mount();

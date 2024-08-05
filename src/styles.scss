@@ -205,6 +205,24 @@ h3 {
   fill: $green;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $background-green-transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $background-green;
+}
+
 @font-face {
   font-display: swap;
   font-family: "Fira Code";
