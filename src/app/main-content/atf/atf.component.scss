@@ -5,6 +5,8 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
 .owner-presentation {
@@ -53,6 +55,7 @@ h2 {
   justify-content: space-between;
   align-items: end;
   width: 100%;
+  max-width: 1920px;
   > div {
     height: 240px;
     border: 1px solid $green;
@@ -119,6 +122,8 @@ h2 {
   transform: skewY(-3deg);
   width: 100%;
   overflow: hidden;
+  max-width: 1920px;
+
   > div {
     white-space: nowrap;
     display: flex;

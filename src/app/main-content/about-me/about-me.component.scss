@@ -2,9 +2,16 @@
 section {
   background: $background-dark;
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  padding: $w-padding;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: $w-padding;
+    max-width: 1920px;
+    width: 100%;
+  }
 }
 
 .owner-container {
@@ -56,15 +63,19 @@ section {
 
 @media (max-width: 1600px) {
   section {
-    padding: 50px 50px;
+    > div {
+      padding: 50px 50px;
+    }
   }
 }
 
 @media (max-width: 1300px) {
   section {
-    padding: 50px 15px;
-    justify-content: center;
-    gap: 100px;
+    > div {
+      padding: 50px 15px;
+      justify-content: center;
+      gap: 100px;
+    }
   }
 
   .owner-picture {
@@ -112,15 +123,19 @@ section {
 
 @media (max-width: 1000px) {
   section {
-    gap: 50px;
+    > div {
+      gap: 50px;
+    }
   }
 }
 
 @media (max-width: 920px) {
   section {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    > div {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
   }
 
   .owner-container {
@@ -134,7 +149,9 @@ section {
 
 @media (max-width: 480px) {
   section {
-    gap: 20px;
+    > div {
+      gap: 20px;
+    }
   }
 
   .owner-picture {
@@ -161,7 +178,9 @@ section {
 
 @media (max-width: 410px) {
   section {
-    gap: 20px;
+    > div {
+      gap: 20px;
+    }
   }
 
   .owner-picture {

@@ -2,23 +2,31 @@
 section {
   background-color: $background-dark;
   display: flex;
-  justify-content: space-between;
-  padding: $w-padding;
-  gap: 20px;
-  position: relative;
-  > div {
-    > span {
-      @include greenHeadline();
-    }
-    > p {
-      font-family: $karla-font;
-      font-size: 18px;
-      color: $white;
-      text-align: justify;
-      width: 450px;
-      margin-top: 30px;
-      margin-bottom: 60px;
-    }
+  justify-content: center;
+
+  > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    padding: $w-padding;
+    gap: 20px;
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+  }
+}
+
+.descrip-container {
+  > span {
+    @include greenHeadline();
+  }
+  > p {
+    font-family: $karla-font;
+    font-size: 18px;
+    color: $white;
+    text-align: justify;
+    width: 450px;
+    margin-top: 30px;
+    margin-bottom: 60px;
   }
 }
 
@@ -80,33 +88,36 @@ section {
 
 @media (max-width: 1600px) {
   section {
-    padding: 50px 50px;
-    gap: 50px;
-    > div {
-      width: 600px;
+    > div:first-of-type {
+      padding: 50px 50px;
+      gap: 50px;
+      > div {
+        width: 600px;
+      }
     }
   }
 }
 
 @media (max-width: 1300px) {
   section {
-    padding: 50px 15px;
+    > div:first-of-type {
+      padding: 50px 15px;
+    }
   }
 }
 
 @media (max-width: 1020px) {
   section {
     gap: 20px;
-    > div {
-      width: 600px;
-    }
   }
 }
 
 @media (max-width: 985px) {
   section {
-    > div {
-      width: 450px;
+    > div:first-of-type {
+      > div {
+        width: 450px;
+      }
     }
   }
 }
@@ -130,25 +141,25 @@ section {
   }
 
   section {
-    gap: 0;
-    justify-content: center;
-    > div {
+    > div:first-of-type {
+      gap: 0;
+      justify-content: center;
       width: 100%;
+      > div {
+        width: 100%;
+      }
     }
   }
 }
 
 @media (max-width: 500px) {
-  section {
-    > div {
-      > span {
-        font-size: 56px;
-      }
-      > p {
-        font-size: 16px;
-        color: $white;
-        width: fit-content;
-      }
+  .descrip-container {
+    > span {
+      font-size: 56px;
+    }
+    > p {
+      font-size: 16px;
+      width: fit-content;
     }
   }
 

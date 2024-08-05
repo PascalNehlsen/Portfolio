@@ -14,9 +14,23 @@ export class ReferenceComponent implements AfterViewInit {
       type: 'loop',
       gap: '6rem',
       focus: 'center',
+      pagination: true, // Aktiviert die Pagination
       padding: {
         left: '20%', // Padding an den Seiten, um mehr von den äußeren Slides sichtbar zu machen
         right: '20%',
+      },
+
+      breakpoints: {
+        960: {
+          gap: '2rem',
+        },
+        768: {
+          gap: '0.1rem',
+          padding: {
+            left: '3%', // Padding an den Seiten, um mehr von den äußeren Slides sichtbar zu machen
+            right: '5%',
+          },
+        },
       },
     });
 

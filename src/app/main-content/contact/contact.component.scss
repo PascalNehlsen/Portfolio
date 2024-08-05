@@ -2,25 +2,34 @@
 section {
   background-color: $background-dark;
   display: flex;
-  justify-content: space-between;
-  gap: 250px;
-  padding: $w-padding;
+  justify-content: center;
+
   > div {
-    width: 500px;
-    > div {
-      @include greenHeadline();
-      line-height: 60px;
-      margin-bottom: 40px;
-    }
-    > p {
-      font-family: $karla-font;
-      font-size: 16px;
-      color: $white;
-      text-align: justify;
-      margin-bottom: 10px;
-      > span {
-        color: $green;
-      }
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+    padding: $w-padding;
+    padding-top: 100px;
+    max-width: 1920px;
+    width: 100%;
+  }
+}
+
+.contact-descrip {
+  width: 500px;
+  > div {
+    @include greenHeadline();
+    line-height: 60px;
+    margin-bottom: 40px;
+  }
+  > p {
+    font-family: $karla-font;
+    font-size: 16px;
+    color: $white;
+    text-align: justify;
+    margin-bottom: 10px;
+    > span {
+      color: $green;
     }
   }
 }
@@ -159,19 +168,27 @@ section {
 
 @media (max-width: 1600px) {
   section {
-    padding: 50px 50px;
+    > div {
+      padding: 50px 50px;
+      padding-top: 100px;
+    }
   }
 }
 
 @media (max-width: 1350px) {
   section {
-    gap: 20px;
+    > div {
+      gap: 20px;
+    }
   }
 }
 
 @media (max-width: 1300px) {
   section {
-    padding: 50px 15px;
+    > div {
+      padding: 50px 15px;
+      padding-top: 100px;
+    }
   }
 }
 
@@ -202,9 +219,12 @@ section {
 
 @media (max-width: 768px) {
   section {
-    flex-direction: column;
-    gap: 50px;
     > div {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .contact-descrip {
       width: 100%;
     }
   }
@@ -216,17 +236,15 @@ section {
     padding-right: 10px;
   }
 
-  section {
+  .contact-descrip {
+    > p {
+      font-size: 16px;
+    }
+    > h3:last-of-type {
+      font-size: 20px;
+    }
     > div {
-      > p {
-        font-size: 16px;
-      }
-      > h3:last-of-type {
-        font-size: 20px;
-      }
-      > div {
-        font-size: 56px;
-      }
+      font-size: 56px;
     }
   }
 

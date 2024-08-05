@@ -1,71 +1,75 @@
 <section>
     <div>
-        <h3>Contact me</h3>
-        <div>Let's work
-            <span> together </span>
-        </div>
-        <h3>Got a problem zu solve?</h3>
-        <p>Contact me through this form, I am interested
-            in hearing from you, knowing your ideas and
-            contributing to you projects with my work.
-        </p>
-        <p>Need a Frontend Developer? <span>Let's talk!</span></p>
-    </div>
-    <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <div class="green-vertical-border"></div>
-        <div>
-            <div class="write-form">
-                <label for="name">What's your name?</label>
-                <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name"
-                    [attr.placeholder]="(name.invalid && name.touched)  ? '' : 'Your name goes here'" required>
-                @if (!name.valid && name.touched) {
-                <span>Oops! It seems your name is missing!</span>
-                }
+        <div class="contact-descrip">
+            <h3>Contact me</h3>
+            <div>Let's work
+                <span> together </span>
             </div>
+            <h3>Got a problem zu solve?</h3>
+            <p>Contact me through this form, I am interested
+                in hearing from you, knowing your ideas and
+                contributing to you projects with my work.
+            </p>
+            <p>Need a Frontend Developer? <span>Let's talk!</span></p>
         </div>
-        <div class="green-vertical-border"></div>
-        <div>
-            <div class="write-form">
-                <label for="email">What's your email?</label>
-                <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                    [attr.placeholder]="(email.invalid && email.touched)  ? '' : 'youremail@email.com'" required
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-                @if (!email.valid && email.touched) {
-                <span>Hoppla! Your email is required!</span>
-                }
-            </div>
-        </div>
-        <div class="green-vertical-border"></div>
-        <div>
-            <div class="write-form">
-                <label for="message">How can I help you?</label>
-                <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message" id="message"
-                    [attr.placeholder]="(message.invalid && message.touched)  ? '' : 'Hello Pascal, I am interested in...'"
-                    required></textarea>
-                @if (!message.valid && message.touched) {
-                <span>What do you need to develop?</span>
-                }
-            </div>
-        </div>
-        <div class="green-vertical-border"></div>
-
-        <div class="submit-container">
-            <div class="checkbox-container">
-                <img id="checkbox" (mouseenter)="checkboxEnterMouse()" (mouseleave)="checkboxLeaveMouse()"
-                    (click)="checkboxOnClick()" [src]="checkboxSrc" alt="">
-                <div>
-                    I've read the <a href="">privacy policy</a> and agree
-                    to the
-                    processing of my data as outlined.
-                    @if (!this.isChecked && !message.invalid && !email.invalid && !name.invalid) {
-                    <span>Please accept the privacy policy.</span>
+        <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <div class="green-vertical-border"></div>
+            <div>
+                <div class="write-form">
+                    <label for="name">What's your name?</label>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name"
+                        [attr.placeholder]="(name.invalid && name.touched)  ? '' : 'Your name goes here'" required>
+                    @if (!name.valid && name.touched) {
+                    <span>Oops! It seems your name is missing!</span>
                     }
                 </div>
-
             </div>
-            <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
-                type="submit" value="Say Hello :)">
-        </div>
+            <div class="green-vertical-border"></div>
+            <div>
+                <div class="write-form">
+                    <label for="email">What's your email?</label>
+                    <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
+                        [attr.placeholder]="(email.invalid && email.touched)  ? '' : 'youremail@email.com'" required
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    @if (!email.valid && email.touched) {
+                    <span>Hoppla! Your email is required!</span>
+                    }
+                </div>
+            </div>
+            <div class="green-vertical-border"></div>
+            <div>
+                <div class="write-form">
+                    <label for="message">How can I help you?</label>
+                    <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message"
+                        id="message"
+                        [attr.placeholder]="(message.invalid && message.touched)  ? '' : 'Hello Pascal, I am interested in...'"
+                        required></textarea>
+                    @if (!message.valid && message.touched) {
+                    <span>What do you need to develop?</span>
+                    }
+                </div>
+            </div>
+            <div class="green-vertical-border"></div>
 
-    </form>
+            <div class="submit-container">
+                <div class="checkbox-container">
+                    <img id="checkbox" (mouseenter)="checkboxEnterMouse()" (mouseleave)="checkboxLeaveMouse()"
+                        (click)="checkboxOnClick()" [src]="checkboxSrc" alt="">
+                    <div>
+                        I've read the <a href="">privacy policy</a> and agree
+                        to the
+                        processing of my data as outlined.
+                        @if (!this.isChecked && !message.invalid && !email.invalid && !name.invalid) {
+                        <span>Please accept the privacy policy.</span>
+                        }
+                    </div>
+
+                </div>
+                <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
+                    type="submit" value="Say Hello :)">
+            </div>
+
+        </form>
+    </div>
+
 </section>

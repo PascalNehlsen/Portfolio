@@ -1,42 +1,45 @@
 <section>
-    <div class="owner-footer">
-        <div class="logo">
-            <div>PN</div>
-            <div>Pascal <br> Nehlsen</div>
+    <div>
+        <div class="owner-footer">
+            <div class="logo">
+                <div>PN</div>
+                <div>Pascal <br> Nehlsen</div>
+            </div>
+            <div>
+                <span>Web Developer</span>
+                <span>Wermelskirchen Germany</span>
+            </div>
         </div>
-        <div>
-            <span>Web Developer</span>
-            <span>Wermelskirchen Germany</span>
+
+        <div class="copyright">
+            &copy; Pascal Nehlsen 2024
+        </div>
+
+        <div class="socials">
+            <div>
+                <img [ngClass]="{'hidden': activeImage !== 'circle-github'}" src="./assets/img/icons/hover-circle.png"
+                    alt="Owner Logo">
+                <a (mouseenter)="showImage('circle-github')" (mouseleave)="hideImage()"
+                    href="https://github.com/PascalNehlsen/" target="_blank">Github</a>
+            </div>
+            <div>
+                <img [ngClass]="{'hidden': activeImage !== 'circle-linkedin'}" src="./assets/img/icons/hover-circle.png"
+                    alt="Owner Logo">
+                <a (mouseenter)="showImage('circle-linkedin')" (mouseleave)="hideImage()"
+                    href="https://www.linkedin.com/in/pascal-nehlsen/" target="_blank">LinkedIn</a>
+            </div>
+            <div>
+                <img [ngClass]="{'hidden': activeImage !== 'circle-mail'}" src="./assets/img/icons/hover-circle.png"
+                    alt="Owner Logo">
+                <a (mouseenter)="showImage('circle-mail')" (mouseleave)="hideImage()"
+                    href="mailto:mail@pascal-nehlsen.de">Email</a>
+            </div>
+            <div>
+                <img [ngClass]="{'hidden': activeImage !== 'circle-imprint'}" src="./assets/img/icons/hover-circle.png"
+                    alt="Owner Logo">
+                <a (mouseenter)="showImage('circle-imprint')" (mouseleave)="hideImage()" href="">Imprint</a>
+            </div>
         </div>
     </div>
 
-    <div class="copyright">
-        &copy; Pascal Nehlsen 2024
-    </div>
-
-    <div class="socials">
-        <div>
-            <img [ngClass]="{'hidden': activeImage !== 'circle-github'}" src="./assets/img/icons/hover-circle.png"
-                alt="Owner Logo">
-            <a (mouseenter)="showImage('circle-github')" (mouseleave)="hideImage()"
-                href="https://github.com/PascalNehlsen/" target="_blank">Github</a>
-        </div>
-        <div>
-            <img [ngClass]="{'hidden': activeImage !== 'circle-linkedin'}" src="./assets/img/icons/hover-circle.png"
-                alt="Owner Logo">
-            <a (mouseenter)="showImage('circle-linkedin')" (mouseleave)="hideImage()"
-                href="https://www.linkedin.com/in/pascal-nehlsen/" target="_blank">LinkedIn</a>
-        </div>
-        <div>
-            <img [ngClass]="{'hidden': activeImage !== 'circle-mail'}" src="./assets/img/icons/hover-circle.png"
-                alt="Owner Logo">
-            <a (mouseenter)="showImage('circle-mail')" (mouseleave)="hideImage()"
-                href="mailto:mail@pascal-nehlsen.de">Email</a>
-        </div>
-        <div>
-            <img [ngClass]="{'hidden': activeImage !== 'circle-imprint'}" src="./assets/img/icons/hover-circle.png"
-                alt="Owner Logo">
-            <a (mouseenter)="showImage('circle-imprint')" (mouseleave)="hideImage()" href="">Imprint</a>
-        </div>
-    </div>
 </section>
