@@ -201,6 +201,10 @@ h3 {
   fill: $white;
 }
 
+#svg:hover .cls-5 {
+  fill: $green;
+}
+
 @font-face {
   font-display: swap;
   font-family: "Fira Code";

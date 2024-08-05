@@ -1,14 +1,10 @@
 @import "./../../../styles.scss";
 
-section {
+.reference {
   background-color: $background-dark;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  padding-top: 50px;
   padding-bottom: 50px;
+  text-align: center;
+  padding-top: 50px;
   > span {
     font-size: 32px;
     font-family: $fira-font;
@@ -17,12 +13,64 @@ section {
   }
 }
 
-/* Eigene Styles für den Slider */
 .splide__slide {
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 10px;
-  background: #ddd;
-  border-radius: 10px;
-  margin: 5px;
+  text-align: justify;
+  font-size: 24px;
+  padding: 40px 20px;
+  background: $background-green;
+  border: 1px solid $green;
+  border-radius: 32px;
+  font-family: $karla-font;
+  color: $white;
+  margin: unset;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  > p {
+    width: 90%;
+  }
+  > span {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    > div {
+      height: 1px;
+      width: 20%;
+      background-color: $white;
+      flex: 1;
+    }
+  }
+}
+
+.splide__arrow {
+  background: none;
+  cursor: default;
+  // position: relative;
+  > svg {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+}
+
+.splide__arrow--next {
+  top: 200px;
+}
+
+.splide__arrow--prev {
+  top: 200px;
+}
+
+#svg:hover .cls-2 {
+  fill: $white;
+}
+
+.splide.is-initialized,
+.splide.is-rendered {
+  padding-top: 50px;
 }
