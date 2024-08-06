@@ -1,5 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { PortfolioService } from '../../../portfolio.service';
+import { PortfolioService } from '../../../services/portfolio.service';
 
 @Component({
   selector: 'app-dialog',

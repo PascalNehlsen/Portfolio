@@ -1,11 +1,13 @@
-import { Component, HostListener } from '@angular/core';
-import { PortfolioService } from './../../portfolio.service';
+import { Component, HostListener, inject } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -14,6 +16,8 @@ export class NavbarComponent {
   gerVisible = false;
 
   constructor(public PortfolioService: PortfolioService) {}
+
+  translate = inject(TranslationService);
 
   showImage(imageName: string) {
     this.PortfolioService.showImage(imageName);
@@ -30,6 +34,12 @@ export class NavbarComponent {
   translateToggle() {
     this.engVisible = !this.engVisible;
     this.gerVisible = !this.gerVisible;
+
+    if (this.engVisible) {
+      this.translate.switchLanguage('en');
+    } else {
+      this.translate.switchLanguage('de');
+    }
   }
 
   showBurgerMenu() {

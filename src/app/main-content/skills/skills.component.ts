@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { PortfolioService } from './../../portfolio.service';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-skills',

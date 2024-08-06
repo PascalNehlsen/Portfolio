@@ -26,7 +26,8 @@
 
 
         <div>
-            <a (mouseenter)="showImage('circle-about')" (mouseleave)="hideImage()" href="#about-me">About me</a>
+            <a (mouseenter)="showImage('circle-about')" (mouseleave)="hideImage()" href="#about-me">{{'aboutme' |
+                translate}}</a>
             <img [ngClass]="{'hidden': activeImage !== 'circle-about'}" src="./assets/img/icons/hover-circle.png"
                 alt="Owner Logo">
         </div>
@@ -36,7 +37,8 @@
                 alt="Owner Logo">
         </div>
         <div>
-            <a (mouseenter)="showImage('circle-owner')" (mouseleave)="hideImage()" href="#projects">Projects</a>
+            <a (mouseenter)="showImage('circle-owner')" (mouseleave)="hideImage()" href="#projects">{{'projects' |
+                translate}}</a>
             <img [ngClass]="{'hidden': activeImage !== 'circle-owner'}" src="./assets/img/icons/hover-circle.png"
                 alt="Owner Logo">
         </div>
@@ -50,9 +52,11 @@
 
     <div class="burger-links" id="navMenu">
 
-        <a href="#about-me">About me</a>
+        <a href="#about-me">{{'aboutme' |
+            translate}}</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">{{'projects' |
+            translate}}</a>
 
         <svg (click)="translateToggle()" [style.display]="engVisible ? 'block' : 'none'" id="translateSvg" width="84"
             height="28" viewBox="0 0 84 28" fill="none" xmlns="http://www.w3.org/2000/svg">

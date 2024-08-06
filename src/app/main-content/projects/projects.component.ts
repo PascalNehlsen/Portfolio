@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { CommonModule } from '@angular/common';
-import { PortfolioService } from '../../portfolio.service';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
   selector: 'app-projects',

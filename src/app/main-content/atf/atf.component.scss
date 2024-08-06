@@ -20,8 +20,10 @@ section {
   > div:last-of-type {
     display: flex;
     gap: 48px;
-    > button {
-      @include transBtn();
+    > a {
+      > button {
+        @include transBtn();
+      }
     }
   }
 }

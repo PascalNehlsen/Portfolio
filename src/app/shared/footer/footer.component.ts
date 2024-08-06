@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { PortfolioService } from '../../portfolio.service';
+import { PortfolioService } from '../../services/portfolio.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -16,6 +16,8 @@ export class FooterComponent {
     private router: Router
   ) {}
 
+  imprint: string = '/imprint';
+
   showImage(imageName: string) {
     this.PortfolioService.showImage(imageName);
   }
@@ -29,8 +31,13 @@ export class FooterComponent {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe(() => {
-      window.scrollTo(0, 0);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const urlFragment = this.router.parseUrl(this.router.url).fragment;
+        if (!urlFragment) {
+          window.scrollTo(0, 0);
+        }
+      }
     });
   }
 }
