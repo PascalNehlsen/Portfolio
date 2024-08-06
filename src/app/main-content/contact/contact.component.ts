@@ -23,7 +23,7 @@ export class ContactComponent {
   checkboxSrc: string = './assets/img/icons/checkbox.png';
   isChecked: boolean = false;
   isFormEnabled: boolean = false;
-  mailTest: boolean = true;
+  isFormSent: boolean = false;
 
   post = {
     endPoint: 'https://pascal-nehlsen.de/sendMail.php',
@@ -37,21 +37,24 @@ export class ContactComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted && !this.mailTest) {
+    if (ngForm.valid && ngForm.submitted) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
-          next: (response) => {
-            // user response
+          next: () => {
+            this.userFeedback();
             ngForm.resetForm();
+            this.checkboxSrc = './assets/img/icons/checkbox.png';
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (ngForm.submitted && !ngForm.valid) {
+      this.isFormSent = false;
       ngForm.resetForm();
+      this.checkboxSrc = './assets/img/icons/checkbox.png';
     }
   }
 
@@ -87,5 +90,12 @@ export class ContactComponent {
 
   disableFormBtn() {
     this.isFormEnabled = false;
+  }
+
+  userFeedback() {
+    this.isFormSent = true;
+    setTimeout(() => {
+      this.isFormSent = false;
+    }, 3000);
   }
 }

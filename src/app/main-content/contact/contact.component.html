@@ -70,7 +70,9 @@
                 <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
                     type="submit" value="Say Hello :)" id="submit-btn" [disabled]="!isFormEnabled">
             </div>
-
+            <div class="userFeedback" [ngClass]="{'enable': isFormSent, 'disable': !isFormSent}">
+                Email sent
+            </div>
         </form>
     </div>
 
