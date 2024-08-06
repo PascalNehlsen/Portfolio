@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { PortfolioService } from './../../../portfolio.service';
+import { PortfolioService } from './../../portfolio.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

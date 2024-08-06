@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from './navbar/navbar.component';
 import { PortfolioService } from '../../portfolio.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-atf',
   standalone: true,
-  imports: [NavbarComponent, CommonModule],
+  imports: [CommonModule],
   templateUrl: './atf.component.html',
   styleUrl: './atf.component.scss',
 })

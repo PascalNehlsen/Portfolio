@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
-import { NavbarComponent } from './main-content/atf/navbar/navbar.component';
 import AOS from 'aos';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',

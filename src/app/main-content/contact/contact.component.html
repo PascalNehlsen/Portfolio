@@ -56,7 +56,7 @@
                     <img id="checkbox" (mouseenter)="checkboxEnterMouse()" (mouseleave)="checkboxLeaveMouse()"
                         (click)="checkboxOnClick()" [src]="checkboxSrc" alt="">
                     <div>
-                        I've read the <a href="">privacy policy</a> and agree
+                        I've read the <a routerLink="imprint">privacy policy</a> and agree
                         to the
                         processing of my data as outlined.
                         @if (!this.isChecked && !message.invalid && !email.invalid && !name.invalid) {

@@ -37,7 +37,8 @@
             <div>
                 <img [ngClass]="{'hidden': activeImage !== 'circle-imprint'}" src="./assets/img/icons/hover-circle.png"
                     alt="Owner Logo">
-                <a (mouseenter)="showImage('circle-imprint')" (mouseleave)="hideImage()" href="">Imprint</a>
+                <a (mouseenter)="showImage('circle-imprint')" (mouseleave)="hideImage()"
+                    routerLink="imprint">Imprint</a>
             </div>
         </div>
     </div>
