@@ -1,7 +1,7 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { ImprintSiteComponent } from './imprint-site/imprint-site.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-imprint',
@@ -10,4 +10,12 @@ import { RouterModule } from '@angular/router';
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
 })
-export class ImprintComponent {}
+export class ImprintComponent {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe(() => {
+      window.scrollTo(0, 0);
+    });
+  }
+}
