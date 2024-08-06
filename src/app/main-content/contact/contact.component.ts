@@ -94,6 +94,7 @@ export class ContactComponent {
 
   userFeedback() {
     this.isFormSent = true;
+    this.isFormEnabled = false;
     setTimeout(() => {
       this.isFormSent = false;
     }, 3000);
