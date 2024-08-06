@@ -74,11 +74,13 @@ export class ContactComponent {
     }
   }
 
-  checkboxOnClick() {
+  checkboxOnClick(ngForm: NgForm) {
     this.isChecked = !this.isChecked;
     this.checkboxEnterMouse();
     if (this.checkboxSrc === './assets/img/icons/checkbox-hover-checked.png') {
-      this.enableFormBtn();
+      if (ngForm.valid) {
+        this.enableFormBtn();
+      }
     } else {
       this.disableFormBtn();
     }

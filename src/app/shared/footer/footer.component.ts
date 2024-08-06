@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from '../../portfolio.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +11,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  constructor(public PortfolioService: PortfolioService) {}
+  constructor(
+    public PortfolioService: PortfolioService,
+    private router: Router
+  ) {}
 
   showImage(imageName: string) {
     this.PortfolioService.showImage(imageName);
@@ -23,5 +26,11 @@ export class FooterComponent {
 
   get activeImage(): string {
     return this.PortfolioService.getActiveImage();
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(() => {
+      window.scrollTo(0, 0);
+    });
   }
 }
