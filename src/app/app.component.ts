@@ -20,7 +20,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
-  title = 'Portfolio';
+  title = 'PN - Portfolio';
 
   ngAfterViewInit(): void {
     AOS.init();

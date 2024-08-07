@@ -37,8 +37,10 @@ export class NavbarComponent {
 
     if (this.engVisible) {
       this.translate.switchLanguage('en');
+      this.translate.langDe = false;
     } else {
       this.translate.switchLanguage('de');
+      this.translate.langDe = true;
     }
   }
 

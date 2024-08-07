@@ -66,8 +66,14 @@
                     </div>
 
                 </div>
+                @if (!translate.langDe) {
                 <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
                     type="submit" value="Say Hello :)" id="submit-btn" [disabled]="!isFormEnabled">
+                } @else {
+                <input [ngClass]="{'enabled-btn': isFormEnabled, 'disabled-btn': !isFormEnabled}" class="submit-btn"
+                    type="submit" value="Sag Hallo :)" id="submit-btn" [disabled]="!isFormEnabled">
+                }
+
             </div>
             <div class="userFeedback" [ngClass]="{'enable': isFormSent, 'disable': !isFormSent}">
                 {{'email-feedback' | translate}}

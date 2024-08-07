@@ -62,8 +62,13 @@
                 <span>Scrum</span>
             </div>
             <div data-aos="zoom-in" (mouseenter)="showImage('speech-bubble')" (mouseleave)="hideImage()">
+                @if (this.translate.langDe) {
+                <img [ngClass]="{'hidden': activeImage !== 'speech-bubble'}"
+                    src="./assets/img/icons/speech-bubble-ger.png" alt="">
+                } @else {
                 <img [ngClass]="{'hidden': activeImage !== 'speech-bubble'}" src="./assets/img/icons/speech-bubble.png"
                     alt="">
+                }
                 <img src="./assets/img/icons/knowledge.png" alt="">
                 <span>Growth Mindset</span>
             </div>
