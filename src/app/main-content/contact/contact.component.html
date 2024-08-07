@@ -16,8 +16,9 @@
             <div>
                 <div class="write-form">
                     <label for="name">{{'form-question-name' | translate}}</label>
-                    <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name"
-                        [attr.placeholder]="(name.invalid && name.touched)  ? '' : 'Your name goes here'" required>
+                    <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" [attr.placeholder]="(name.invalid && name.touched)  ? '' : (translate.langDe 
+                        ? 'Hier Ihr Name' 
+                        : 'Your name goes here')" required>
                     @if (!name.valid && name.touched && name.value < 1) { <span>{{'form-question-name-error' |
                         translate}}</span>
                         }
@@ -29,8 +30,9 @@
                     <label for="email">{{'form-question-email' |
                         translate}}</label>
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
-                        [attr.placeholder]="(email.invalid && email.touched)  ? '' : 'youremail@email.com'" required
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                        [attr.placeholder]="(email.invalid && email.touched)  ? '' : (translate.langDe 
+                        ? 'deinemail@email.de' 
+                        : 'youremail@email.com')" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     @if (!email.valid && email.touched && email.value < 1) { <span>
                         {{'form-question-email-error' |
                         translate}}</span>
@@ -42,9 +44,9 @@
                 <div class="write-form">
                     <label for="message">{{'form-question-text' | translate}}</label>
                     <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message"
-                        id="message"
-                        [attr.placeholder]="(message.invalid && message.touched)  ? '' : 'Hello Pascal, I am interested in...'"
-                        required></textarea>
+                        id="message" [attr.placeholder]="(message.invalid && message.touched)  ? '' : (translate.langDe 
+                        ? 'Hi Pascal, ich bin interessiert an...' 
+                        : 'Hello Pascal, I am interested in...')" required></textarea>
                     @if (!message.valid && message.touched && message.value < 1) { <span>{{'form-question-text-error' |
                         translate}}</span>
                         }
