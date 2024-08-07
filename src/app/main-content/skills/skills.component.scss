@@ -174,7 +174,7 @@ section {
   .skillset {
     gap: 0;
     row-gap: 0;
-    justify-content: start;
+    justify-content: center;
     margin-top: 48px;
     margin-left: 0;
     width: fit-content;
@@ -187,6 +187,19 @@ section {
       width: 90px;
       > span {
         font-size: 16px;
+      }
+    }
+    > div:last-of-type {
+      > img:first-of-type {
+        &:hover {
+          scale: 1;
+        }
+        position: absolute;
+        height: 100px;
+        width: 150px;
+        top: -110px;
+        left: -5px;
+        z-index: 999;
       }
     }
   }

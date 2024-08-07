@@ -61,6 +61,17 @@ export class ContactComponent {
     }
   }
 
+  validateEmail(emailControl: {
+    invalid: any;
+    touched: any;
+    control: { setValue: (arg0: string) => void };
+  }) {
+    if (emailControl.invalid && emailControl.touched) {
+      this.contactData.email = '';
+      emailControl.control.setValue('');
+    }
+  }
+
   checkboxEnterMouse() {
     if (this.isChecked) {
       this.checkboxSrc = './assets/img/icons/checkbox-hover-checked.png';

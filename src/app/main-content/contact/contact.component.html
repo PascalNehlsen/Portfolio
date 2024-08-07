@@ -32,11 +32,11 @@
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
                         [attr.placeholder]="(email.invalid && email.touched)  ? '' : (translate.langDe 
                         ? 'ihremail@email.de' 
-                        : 'youremail@email.com')" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-                    @if (!email.valid && email.touched && email.value < 1) { <span>
-                        {{'form-question-email-error' |
-                        translate}}</span>
-                        }
+                        : 'youremail@email.com')" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        (blur)="validateEmail(email)">
+                    @if (email.invalid && email.touched) {
+                    <span>{{'form-question-email-error' | translate}}</span>
+                    }
                 </div>
             </div>
             <div class="green-vertical-border"></div>
