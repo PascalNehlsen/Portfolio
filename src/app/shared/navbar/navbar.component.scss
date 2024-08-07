@@ -116,3 +116,10 @@ nav {
     padding: 50px 15px;
   }
 }
+
+@media (max-width: 390px) {
+  .burger-links {
+    gap: 5px;
+    padding: 15px 30px;
+  }
+}
