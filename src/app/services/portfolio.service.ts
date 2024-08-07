@@ -1,10 +1,12 @@
 import { inject, Injectable } from '@angular/core';
+import { TranslationService } from '../services/translation.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PortfolioService {
   constructor() {}
+  translate = inject(TranslationService);
 
   private activeImage: string = '';
 
@@ -75,8 +77,65 @@ export class PortfolioService {
     },
   ];
 
+  projectsDe: {
+    name: string;
+    tools: string[];
+    description: string;
+    symbols: string[];
+    image: string;
+    target: string;
+    targetDemo: string;
+    imageDialog?: string;
+  }[] = [
+    {
+      name: 'join',
+      image: './assets/img/projects/join-dialog.png',
+      description:
+        'Manager nach dem Vorbild eines Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
+      symbols: [
+        './assets/img/icons/javascript-green.png',
+        './assets/img/icons/firebase-green.png',
+        './assets/img/icons/html-green.png',
+        './assets/img/icons/css-green.png',
+      ],
+      target: 'https://github.com/PascalNehlsen/Join',
+      targetDemo: 'https://pascal-nehlsen.de/join/',
+      tools: ['JavaScript', 'Firebase', 'HTML', 'CSS'],
+    },
+    {
+      name: 'elpolloloco',
+      image: './assets/img/projects/elpolloloco-dialog.png',
+      description:
+        'Jump `n Run Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
+      symbols: [
+        './assets/img/icons/javascript-green.png',
+        './assets/img/icons/html-green.png',
+        './assets/img/icons/css-green.png',
+      ],
+      target: 'https://github.com/PascalNehlsen/El-Pollo-Loco',
+      targetDemo: 'https://pascal-nehlsen.de/el-pollo-loco/',
+      tools: ['JavaScript', 'HTML', 'CSS'],
+    },
+    {
+      name: 'pokedex',
+      image: './assets/img/projects/pokedex-dialog.png',
+      description:
+        'Pokedex Rot ist der Traum eines jeden Pokémon-Liebhabers. Mit der Drag-and-Drop-Funktionalität, der dynamischen Pokémon-Anzeige und Klappkartenfunktion verbessert es die Pokémon-Erkundung. Die Benutzer können mühelos Pokémon-Details organisieren, was es zu einem unverzichtbaren Werkzeug für Fans macht.',
+      symbols: [
+        './assets/img/icons/javascript-green.png',
+        './assets/img/icons/html-green.png',
+        './assets/img/icons/css-green.png',
+      ],
+      target: 'https://github.com/PascalNehlsen/Pokedex-Red',
+      targetDemo: 'https://pascal-nehlsen.de/pokedex/',
+      tools: ['JavaScript', 'HTML', 'CSS'],
+    },
+  ];
+
   openDialog(i: number) {
-    const project = this.projects[i];
+    const project = this.translate.langDe
+      ? this.projectsDe[i]
+      : this.projects[i];
 
     const elements = this.getElements();
     this.updateDialogContent(elements, project, i);
