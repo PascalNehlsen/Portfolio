@@ -22,17 +22,9 @@ section {
   gap: 20px;
   font-size: 24px;
   cursor: pointer;
-
   > a {
-    text-decoration: none;
-    display: flex;
-    gap: 5px;
-    color: $green;
-    &:hover {
-      color: $hover-background-green;
-    }
-    > span {
-      cursor: pointer;
+    > button {
+      @include transBtn();
     }
   }
 }
@@ -74,15 +66,9 @@ section {
     align-items: start;
     text-align: start;
   }
-
-  .links {
-    > a {
-      flex-direction: column;
-    }
-  }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 450px) {
   section {
     padding-top: 310px;
   }

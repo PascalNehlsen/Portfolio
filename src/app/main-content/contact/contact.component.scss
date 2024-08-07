@@ -134,11 +134,11 @@ section {
 
 .userFeedback {
   position: absolute;
+  text-align: center;
   @include transBtn();
   bottom: -2px;
-  left: 225px;
-  width: fit-content;
-  padding: 14px 40px;
+  width: 100%;
+  padding: 14px 60px;
   background-color: $background-dark;
   transition: all 0.5s ease-in-out;
   transform: translateY(300px);
