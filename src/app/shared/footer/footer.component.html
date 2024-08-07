@@ -6,8 +6,8 @@
                 <div>Pascal <br> Nehlsen</div>
             </div>
             <div>
-                <span>Web Developer</span>
-                <span>Wermelskirchen Germany</span>
+                <span>{{'dev' | translate}}</span>
+                <span>Wermelskirchen/ NRW</span>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <img [ngClass]="{'hidden': activeImage !== 'circle-imprint'}" src="./assets/img/icons/hover-circle.png"
                     alt="Owner Logo">
                 <a (mouseenter)="showImage('circle-imprint')" (mouseleave)="hideImage()"
-                    routerLink="imprint">Imprint</a>
+                    routerLink="imprint">{{'imprint-link' | translate}}</a>
             </div>
         </div>
     </div>

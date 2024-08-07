@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PortfolioService } from '../../services/portfolio.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
+import { TranslationService } from '../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
@@ -15,6 +17,8 @@ export class FooterComponent {
     public PortfolioService: PortfolioService,
     private router: Router
   ) {}
+
+  translate = inject(TranslationService);
 
   imprint: string = '/imprint';
 

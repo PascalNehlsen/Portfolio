@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { CommonModule } from '@angular/common';
 import { PortfolioService } from '../../services/portfolio.service';
+import { TranslationService } from '../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [DialogComponent, CommonModule],
+  imports: [DialogComponent, CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -15,6 +17,8 @@ export class ProjectsComponent {
     throw new Error('Method not implemented.');
   }
   constructor(public PortfolioService: PortfolioService) {}
+
+  translate = inject(TranslationService);
 
   showImage(imageName: string) {
     this.PortfolioService.showImage(imageName);

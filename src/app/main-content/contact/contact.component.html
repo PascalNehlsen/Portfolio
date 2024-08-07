@@ -1,52 +1,52 @@
 <section>
     <div>
         <div class="contact-descrip">
-            <h3>Contact me</h3>
-            <div>Let's work
-                <span> together </span>
+            <h3>{{'contact' | translate}}</h3>
+            <div>{{'contact-headline1' | translate}}
+                <span> {{'contact-headline2' | translate}} </span>
             </div>
-            <h3>Need a solution? Reach out to me!</h3>
+            <h3>{{'contact-cta' | translate}}</h3>
             <p>
-                Get in touch using this form — I'm eager to hear your ideas and contribute to your projects with my
-                work.
+                {{'contact-cta2' | translate}}
             </p>
-            <p>Need a Frontend Developer? <span>Let's talk!</span></p>
+            <p>{{'contact-question' | translate}} <span>{{'contact-question-cta' | translate}}</span></p>
         </div>
         <form class="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="green-vertical-border"></div>
             <div>
                 <div class="write-form">
-                    <label for="name">What's your name?</label>
+                    <label for="name">{{'form-question-name' | translate}}</label>
                     <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name"
                         [attr.placeholder]="(name.invalid && name.touched)  ? '' : 'Your name goes here'" required>
-                    @if (!name.valid && name.touched && name.value < 1) { <span>Oops! It seems your name is
-                        missing!</span>
+                    @if (!name.valid && name.touched && name.value < 1) { <span>{{'form-question-name-error' |
+                        translate}}</span>
                         }
                 </div>
             </div>
             <div class="green-vertical-border"></div>
             <div>
                 <div class="write-form">
-                    <label for="email">What's your email?</label>
+                    <label for="email">{{'form-question-email' |
+                        translate}}</label>
                     <input #email="ngModel" [(ngModel)]="contactData.email" type="email" id="email" name="email"
                         [attr.placeholder]="(email.invalid && email.touched)  ? '' : 'youremail@email.com'" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     @if (!email.valid && email.touched && email.value < 1) { <span>
-                        Hoppla! Your email is
-                        required!</span>
+                        {{'form-question-email-error' |
+                        translate}}</span>
                         }
                 </div>
             </div>
             <div class="green-vertical-border"></div>
             <div>
                 <div class="write-form">
-                    <label for="message">How can I help you?</label>
+                    <label for="message">{{'form-question-text' | translate}}</label>
                     <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message"
                         id="message"
                         [attr.placeholder]="(message.invalid && message.touched)  ? '' : 'Hello Pascal, I am interested in...'"
                         required></textarea>
-                    @if (!message.valid && message.touched && message.value < 1) { <span>What do you need to
-                        develop?</span>
+                    @if (!message.valid && message.touched && message.value < 1) { <span>{{'form-question-text-error' |
+                        translate}}</span>
                         }
 
                 </div>
@@ -58,11 +58,10 @@
                     <img id="checkbox" (mouseenter)="checkboxEnterMouse()" (mouseleave)="checkboxLeaveMouse()"
                         (click)="checkboxOnClick(contactForm)" [src]="checkboxSrc" alt="">
                     <div>
-                        I've read the <a routerLink="imprint">privacy policy</a> and agree
-                        to the
-                        processing of my data as outlined.
+                        {{'privacy-policy1' | translate}} <a routerLink="imprint">{{'privacy-policy2' | translate}}</a>
+                        {{'privacy-policy3' | translate}}
                         @if (!this.isFormEnabled && message.valid && email.valid && name.valid) {
-                        <span>Please accept the privacy policy.</span>
+                        <span>{{'privacy-policy-error' | translate}}</span>
                         }
                     </div>
 
@@ -71,7 +70,7 @@
                     type="submit" value="Say Hello :)" id="submit-btn" [disabled]="!isFormEnabled">
             </div>
             <div class="userFeedback" [ngClass]="{'enable': isFormSent, 'disable': !isFormSent}">
-                Email sent
+                {{'email-feedback' | translate}}
             </div>
         </form>
     </div>

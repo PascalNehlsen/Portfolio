@@ -42,7 +42,7 @@ export class PortfolioService {
         './assets/img/icons/css-green.png',
       ],
       target: 'https://github.com/PascalNehlsen/Join',
-      targetDemo: '',
+      targetDemo: 'https://pascal-nehlsen.de/join/',
       tools: ['JavaScript', 'Firebase', 'HTML', 'CSS'],
     },
     {
@@ -56,7 +56,7 @@ export class PortfolioService {
         './assets/img/icons/css-green.png',
       ],
       target: 'https://github.com/PascalNehlsen/El-Pollo-Loco',
-      targetDemo: '',
+      targetDemo: 'https://pascal-nehlsen.de/el-pollo-loco/',
       tools: ['JavaScript', 'HTML', 'CSS'],
     },
     {
@@ -70,7 +70,7 @@ export class PortfolioService {
         './assets/img/icons/css-green.png',
       ],
       target: 'https://github.com/PascalNehlsen/Pokedex-Red',
-      targetDemo: '',
+      targetDemo: 'https://pascal-nehlsen.de/pokedex/',
       tools: ['JavaScript', 'HTML', 'CSS'],
     },
   ];
@@ -121,6 +121,7 @@ export class PortfolioService {
       project.name === 'elpolloloco' ? 'el Pollo Loco' : project.name;
     elements.projectDescription.innerHTML = project.description;
     elements.githubLink.href = project.target;
+    elements.demoLink.href = project.targetDemo;
   }
 
   populateSkills(

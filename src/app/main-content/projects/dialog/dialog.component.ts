@@ -1,15 +1,19 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, inject, Input } from '@angular/core';
 import { PortfolioService } from '../../../services/portfolio.service';
+import { TranslationService } from '../../../services/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss',
 })
 export class DialogComponent {
   constructor(public PortfolioService: PortfolioService) {}
+
+  translate = inject(TranslationService);
 
   @Input() singleproject!: {
     name: string;
