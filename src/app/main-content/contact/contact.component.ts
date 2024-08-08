@@ -61,28 +61,37 @@ export class ContactComponent {
     }
   }
 
-  validateEmail(emailControl: {
-    invalid: any;
-    touched: any;
-    control: { setValue: (arg0: string) => void };
-  }) {
+  validateEmail(
+    ngForm: NgForm,
+    emailControl: {
+      invalid: any;
+      valid: any;
+      touched: any;
+      control: { setValue: (arg0: string) => void };
+    }
+  ) {
     if (emailControl.invalid && emailControl.touched) {
       this.contactData.email = '';
       emailControl.control.setValue('');
     }
+    if (emailControl.valid) {
+      this.checkFormValid(ngForm);
+    }
   }
 
-  checkboxEnterMouse() {
+  checkboxEnterMouse(ngForm: NgForm) {
     if (this.isChecked) {
       this.checkboxSrc = './assets/img/icons/checkbox-hover-checked.png';
+      this.checkFormValid(ngForm);
     } else {
       this.checkboxSrc = './assets/img/icons/checkbox-hover.png';
     }
   }
 
-  checkboxLeaveMouse() {
+  checkboxLeaveMouse(ngForm: NgForm) {
     if (this.isChecked) {
       this.checkboxSrc = './assets/img/icons/checkbox-checked.png';
+      this.checkFormValid(ngForm);
     } else {
       this.checkboxSrc = './assets/img/icons/checkbox.png';
     }
@@ -90,11 +99,16 @@ export class ContactComponent {
 
   checkboxOnClick(ngForm: NgForm) {
     this.isChecked = !this.isChecked;
-    this.checkboxEnterMouse();
-    if (this.checkboxSrc === './assets/img/icons/checkbox-hover-checked.png') {
-      if (ngForm.valid) {
-        this.enableFormBtn();
-      }
+    this.checkboxEnterMouse(ngForm);
+    this.checkFormValid(ngForm);
+  }
+
+  checkFormValid(ngForm: NgForm) {
+    if (
+      ngForm.valid &&
+      this.checkboxSrc == './assets/img/icons/checkbox-checked.png'
+    ) {
+      this.enableFormBtn();
     } else {
       this.disableFormBtn();
     }

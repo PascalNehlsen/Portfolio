@@ -33,7 +33,7 @@
                         [attr.placeholder]="(email.invalid && email.touched)  ? '' : (translate.langDe 
                         ? 'ihremail@email.de' 
                         : 'youremail@email.com')" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        (blur)="validateEmail(email)">
+                        (blur)="validateEmail(contactForm, email)">
                     @if (email.invalid && email.touched && email.value < 1) { <span>{{'form-question-email-error' |
                         translate}}</span>
                         }
@@ -57,13 +57,15 @@
 
             <div class="submit-container">
                 <div class="checkbox-container">
-                    <img id="checkbox" (mouseenter)="checkboxEnterMouse()" (mouseleave)="checkboxLeaveMouse()"
-                        (click)="checkboxOnClick(contactForm)" [src]="checkboxSrc" alt="">
+                    <img id="checkbox" (mouseenter)="checkboxEnterMouse(contactForm)"
+                        (mouseleave)="checkboxLeaveMouse(contactForm)" (click)="checkboxOnClick(contactForm)"
+                        [src]="checkboxSrc" alt="">
                     <div>
                         {{'privacy-policy1' | translate}} <a routerLink="imprint">{{'privacy-policy2' | translate}}</a>
                         {{'privacy-policy3' | translate}}
-                        @if (!this.isFormEnabled && message.valid && email.valid && name.valid) {
-                        <span>{{'privacy-policy-error' | translate}}</span>
+                        @if (!this.isFormEnabled && message.valid && email.valid && name.valid && !this.isChecked) {
+                        <span>{{'privacy-policy-error' |
+                            translate}}</span>
                         }
                     </div>
 
