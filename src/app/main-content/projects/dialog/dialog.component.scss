@@ -74,10 +74,11 @@
     color: $green;
   }
   > p {
-    margin-top: 20px;
+    margin-top: 10px;
     font-family: $karla-font;
     font-size: 18px;
     color: $white;
+    margin-bottom: 20px;
   }
 }
 
@@ -248,8 +249,9 @@
 
   .project-description {
     > p {
-      height: 80px;
+      height: 60px;
       overflow-y: scroll;
+      margin-bottom: 0;
     }
   }
 
