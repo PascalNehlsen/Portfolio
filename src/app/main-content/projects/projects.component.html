@@ -15,6 +15,8 @@
                         (mouseleave)="hideImage()">
                         @if (project.name === 'elpolloloco') {
                         <p>el Pollo Loco</p>
+                        } @else if (project.name === 'devsecops-blog') {
+                        <p>devSecOps Blog</p>
                         } @else {
                         <p>{{project.name}}</p>
                         }
@@ -31,6 +33,8 @@
         </div>
 
         <div class="projects-small-container">
+            <img [ngClass]="{'hidden': activeImage !== 'devsecops-blog'}"
+                src="./assets/img/projects/devsecops-blog-small.png" alt="">
             <img [ngClass]="{'hidden': activeImage !== 'join'}" src="./assets/img/projects/join-small.png" alt="">
             <img [ngClass]="{'hidden': activeImage !== 'elpolloloco'}" src="./assets/img/projects/elpolloloco-small.png"
                 alt="">

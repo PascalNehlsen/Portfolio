@@ -33,6 +33,20 @@ export class PortfolioService {
     imageDialog?: string;
   }[] = [
     {
+      name: 'devsecops-blog',
+      image: './assets/img/projects/devsecops-blog.png',
+      description:
+        "On this page, you'll find an overview of my recent DevSecOps projects. I focus on integrating security into CI/CD pipelines and automating compliance and monitoring to create secure and scalable solutions. Explore my work to see how I enhance software delivery while maintaining a strong security posture.",
+      symbols: [
+        './assets/img/icons/docusaurus.svg',
+        './assets/img/icons/html-green.png',
+        './assets/img/icons/css-green.png',
+      ],
+      target: 'https://github.com/PascalNehlsen/devsecops-blog/',
+      targetDemo: 'https://pascalnehlsen.github.io/devsecops-blog/',
+      tools: ['Docusaurus', 'HTML', 'CSS'],
+    },
+    {
       name: 'join',
       image: './assets/img/projects/join-dialog.png',
       description:
@@ -87,6 +101,19 @@ export class PortfolioService {
     targetDemo: string;
     imageDialog?: string;
   }[] = [
+    {
+      name: 'devsecops-blog',
+      image: './assets/img/projects/devsecops-blog.png',
+      description:
+        'Auf dieser Seite findest du eine Übersicht über meine aktuellen Projekte im DevSecOps-Bereich. Ich konzentriere mich darauf, Sicherheit in CI/CD-Pipelines zu integrieren und Compliance sowie Monitoring zu automatisieren, um sichere und skalierbare Lösungen zu schaffen. Entdecke meine Arbeiten, um zu sehen, wie ich die Softwarebereitstellung verbessere und gleichzeitig eine starke Sicherheitslage aufrechterhalte.',
+      symbols: [
+        './assets/img/icons/html-green.png',
+        './assets/img/icons/css-green.png',
+      ],
+      target: 'https://github.com/PascalNehlsen/devsecops-blog/',
+      targetDemo: 'https://pascalnehlsen.github.io/devsecops-blog/',
+      tools: ['Docusaurus', 'HTML', 'CSS'],
+    },
     {
       name: 'join',
       image: './assets/img/projects/join-dialog.png',
@@ -178,6 +205,8 @@ export class PortfolioService {
     elements.projectNumber.innerHTML = (i + 1).toString().padStart(2, '0');
     elements.projectTitle.innerHTML =
       project.name === 'elpolloloco' ? 'el Pollo Loco' : project.name;
+    elements.projectTitle.innerHTML =
+      project.name === 'devsecops-blog' ? 'devSecOps Blog' : project.name;
     elements.projectDescription.innerHTML = project.description;
     elements.githubLink.href = project.target;
     elements.demoLink.href = project.targetDemo;

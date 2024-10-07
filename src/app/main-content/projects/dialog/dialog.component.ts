@@ -35,7 +35,7 @@ export class DialogComponent {
     const projectNumber = document.getElementById('projectNumber')
       ?.innerHTML as string;
     let number = parseInt(projectNumber, 10);
-    if (number == 3) {
+    if (number == 4) {
       number = 0;
     }
     this.PortfolioService.openDialog(number);
