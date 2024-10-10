@@ -203,10 +203,15 @@ export class PortfolioService {
   ) {
     elements.projectImg.src = project.image;
     elements.projectNumber.innerHTML = (i + 1).toString().padStart(2, '0');
-    elements.projectTitle.innerHTML =
-      project.name === 'elpolloloco' ? 'el Pollo Loco' : project.name;
-    elements.projectTitle.innerHTML =
-      project.name === 'devsecops-blog' ? 'devSecOps Blog' : project.name;
+
+    if (project.name === 'elpolloloco') {
+      elements.projectTitle.innerHTML = 'el Pollo Loco';
+    } else if (project.name === 'devsecops-blog') {
+      elements.projectTitle.innerHTML = 'devSecOps Blog';
+    } else {
+      elements.projectTitle.innerHTML = project.name;
+    }
+
     elements.projectDescription.innerHTML = project.description;
     elements.githubLink.href = project.target;
     elements.demoLink.href = project.targetDemo;
