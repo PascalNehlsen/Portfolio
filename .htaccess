@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+# Don’t rewrite existing files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+# All other requests → index.html
+RewriteRule ^ index.html [L]
