@@ -1,0 +1,39 @@
+name: Build and Deploy Angular App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4.2.2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4.4.0
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Angular app
+      run: npm run build -- --source-map=false
+
+    - name: Copy .htaccess file
+      run: cp .htaccess dist/portfolio/browser/.htaccess
+
+    - name: VM Deploy
+      uses: appleboy/scp-action@v1
+      with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          source: "dist/portfolio/browser/"
+          target: ${{ secrets.TARGET }}
